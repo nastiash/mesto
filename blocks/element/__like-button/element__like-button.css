@@ -4,10 +4,14 @@
   width: 21px;
   height: 19px;
   padding: 0;
-  background-image: url(../../../images/Element/heart.svg);
+  border: none;
+  justify-self: end;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: white;
-  border: none;
-  justify-self: end;
+}
+
+.element__like-button:hover {
+  opacity: .5;
+  cursor: pointer;
 }

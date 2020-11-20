@@ -1,15 +1,14 @@
-.header__logo {
+.logo {
   width: 142px;
   height: 33px;
   padding-bottom: 41px;
-  background-image: url(../../../images/Header/logo.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 /* Cтили для для разрешения до 380px */
 @media screen and (max-width: 380px) {
-  .header__logo {
+  .logo {
     width: 103.74px;
     height: 24.4px;
     padding-bottom: 31.6px;

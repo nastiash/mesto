@@ -10,6 +10,11 @@
   align-self: center;
 }
 
+.profile__add-button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
 /* Cтили для для разрешения до 920px */
 @media screen and (max-width: 920px) {
   .profile__add-button {

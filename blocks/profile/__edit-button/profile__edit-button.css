@@ -11,11 +11,22 @@
   align-self: end;
 }
 
+.profile__edit-button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+/* Cтили для для разрешения до 920px */
+@media screen and (max-width: 920px) {
+  .profile__edit-button {
+    align-self: center;
+  }
+}
+
 /* Cтили для для разрешения до 380px */
 @media screen and (max-width: 380px) {
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    align-self: center;
   }
 }
