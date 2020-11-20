@@ -1,0 +1,34 @@
+* {
+  outline: 1px solid red;
+}
+
+.page {
+  width: 100%;
+  max-width: 880px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 45px 0 60px 0;
+  background: #000000;
+  color: #fff;
+  font-family: 'Inter', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  display: grid;
+  grid-template-columns: minmax(19px, 200px) repeat(3, 1fr) minmax(19px, 200px);
+  grid-template-rows: auto;
+  grid-template-areas:
+    'header header header header header'
+    'content content content content content'
+    'footer footer footer footer footer';
+  }
+
+/* Cтили для для разрешения до 380px */
+@media screen and (max-width: 380px) {
+  .page {
+    padding: 28px 0 36px 0;
+  }
+}

@@ -1,0 +1,18 @@
+.footer {
+  grid-area: footer;
+  padding-top: 67px;
+}
+
+/* Cтили для для разрешения до 920px */
+@media screen and (max-width: 920px) {
+  .footer {
+    padding: 48px 27px 0;
+  }
+}
+
+/* Cтили для для разрешения до 380px */
+@media screen and (max-width: 380px) {
+  .footer {
+    padding: 47px 20px 0;
+  }
+}

@@ -1,0 +1,10 @@
+.profile__avatar {
+  max-width: 120px;
+}
+
+/* Cтили для для разрешения до 920px */
+@media screen and (max-width: 920px) {
+  .profile__avatar {
+  margin-bottom: 27px;
+  }
+}

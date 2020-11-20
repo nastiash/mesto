@@ -1,0 +1,13 @@
+.content {
+  grid-area: content;
+  width: 100%;
+  max-width: 880px;
+  min-width: 320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    'profile profile profile'
+    'elements elements elements';
+}

@@ -1,0 +1,28 @@
+.profile__caption {
+  margin: 0;
+  max-width: 282px;
+  grid-column: 1;
+  grid-row: 2;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(22 / 18);
+}
+
+/* Cтили для для разрешения до 920px */
+@media screen and (max-width: 920px) {
+  .profile__caption {
+    justify-self: center;
+    grid-column: 1/3;
+  }
+}
+
+/* Cтили для для разрешения до 380px */
+@media screen and (max-width: 380px) {
+  .profile__caption {
+    grid-column: 1;
+    font-size: 14px;
+    line-height: calc(17 / 14);
+    padding-left: 25px;
+  }
+}

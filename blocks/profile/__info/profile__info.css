@@ -1,0 +1,24 @@
+.profile__info {
+  display: grid;
+  grid-template-columns:  fit-content(294px) 1fr;
+  grid-template-rows: minmax(26px, 39px) fit-content(18px);
+  grid-row-gap: 16px;
+  column-gap: 18px;
+  align-self: center;
+  justify-self: center;
+}
+
+/* Cтили для для разрешения до 920px */
+@media screen and (max-width: 920px) {
+  .profile__info {
+    grid-template-rows: fit-content(26px) fit-content(18px);
+  }
+}
+
+/* Cтили для для разрешения до 380px */
+@media screen and (max-width: 380px) {
+  .profile__info {
+    grid-row-gap: 8px;
+    column-gap: 10px;
+  }
+}

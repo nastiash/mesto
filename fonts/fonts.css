@@ -1,0 +1,28 @@
+/* перестаралась с удалением шрифтов =( */
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/inter/Regular.woff2") format("woff2"),
+       url("../fonts/inter/Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/inter/Medium.woff2") format("woff2"),
+       url("../fonts/inter/Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/inter/Black.woff2") format("woff2"),
+       url("../fonts/inter/Black.woff") format("woff");
+}

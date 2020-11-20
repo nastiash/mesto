@@ -1,0 +1,16 @@
+.profile {
+  max-width: 880px;
+  grid-area: profile;
+  padding: 40px 0 0;
+  display: grid;
+  grid-template-columns: 120px 1fr 150px;
+  column-gap: 30px;
+}
+
+/* Cтили для для разрешения до 920px */
+@media screen and (max-width: 920px) {
+  .profile {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
