@@ -10,6 +10,7 @@
   padding: 45px 0 60px 0;
   background: #000000;
   color: #fff;
+  position: relative;
   font-family: 'Inter', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,0 +1,5 @@
+.pop-up__close-button {
+  margin: -48px -48px 0 0;
+  display: flex;
+  justify-content: flex-end;
+}
