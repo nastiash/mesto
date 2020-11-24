@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mesto</title>
+  <title>Mesto для обмена фотографиями</title>
   <link rel="stylesheet" href="./pages/index.css">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <body class="page">
   <header class="header">
-<div class="logo logo_theme_dark"></div>
+    <div class="logo logo_theme_dark"></div>
   </header>
   <main class="content">
-    <section class="profile">
-      <img class="profile__avatar" src="./images/Profile/Avatar.png">
+    <section class="profile" aria-label="личный профиль">
+      <img class="profile__avatar" src="./images/Profile/Avatar.png" alt="аватар профиля">
       <div class="profile__info">
         <h2 class="profile__name">Жак-Ив Кусто</h2>
         <p class="profile__caption">Исследователь океана</p>
@@ -21,49 +21,49 @@
       </div>
       <button class="profile__add-button"></button>
     </section>
-    <section class="elements">
-      <div class="element">
-        <img class="element__photo" src="./images/Element/Moscow.jpg">
-        <div class="element__caption">
-          <p class="element__title">Москва</p>
-          <button class="element__like-button"></button>
+    <section class="cards" aria-label="фотографии">
+        <div class="card">
+          <img class="card__photo" src="./images/card/Moscow.jpg" alt="Ночной район Москва Сити">
+          <div class="card__caption">
+            <p class="card__title">Москва</p>
+            <button class="card__like-button card__like-button_disabled"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__photo" src="./images/Element/Crimea.jpg">
-        <div class="element__caption">
-          <p class="element__title">Крым</p>
-          <button class="element__like-button"></button>
+        <div class="card">
+          <img class="card__photo" src="./images/card/Helsinki.jpg" alt="Закат на проспекте в Хельсинки">
+          <div class="card__caption">
+            <p class="card__title">Хельсинки</p>
+            <button class="card__like-button card__like-button_disabled"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__photo" src="./images/Element/Toksovo.jpg">
-        <div class="element__caption">
-          <p class="element__title">Токсово. Ленинградская область</p>
-          <button class="element__like-button"></button>
+        <div class="card">
+          <img class="card__photo" src="./images/card/Maldives.jpg" alt="Пальмы на вечернем пляже Мальдивских островов">
+          <div class="card__caption">
+            <p class="card__title">Мальдивские острова</p>
+            <button class="card__like-button card__like-button_disabled"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__photo" src="./images/Element/Kamchatka.jpg">
-        <div class="element__caption">
-          <p class="element__title">Камчатка</p>
-          <button class="element__like-button"></button>
+        <div class="card">
+          <img class="card__photo" src="./images/card/Singapour.jpg" alt="Рыбок в Сингапуре">
+          <div class="card__caption">
+            <p class="card__title">Сингапур</p>
+            <button class="card__like-button card__like-button_disabled"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__photo" src="./images/Element/Arkhyz.jpg">
-        <div class="element__caption">
-          <p class="element__title">Архыз. Карачаево-Черкессия</p>
-          <button class="element__like-button"></button>
+        <div class="card">
+          <img class="card__photo" src="./images/card/Tokio.jpg" alt="Яркий Токио">
+          <div class="card__caption">
+            <p class="card__title">Токио</p>
+            <button class="card__like-button card__like-button_disabled"></button>
+          </div>
         </div>
-      </div>
-      <div class="element">
-        <img class="element__photo" src="./images/Element/Vladivostok.jpg">
-        <div class="element__caption">
-          <p class="element__title">Владивосток</p>
-          <button class="element__like-button"></button>
+        <div class="card">
+          <img class="card__photo" src="./images/card/Vladivostok.jpg" alt="Ночной Владивосток">
+          <div class="card__caption">
+            <p class="card__title">Владивосток</p>
+            <button class="card__like-button card__like-button_disabled"></button>
+          </div>
         </div>
-      </div>
     </section>
   </main>
   <footer class="footer">
@@ -71,14 +71,12 @@
   </footer>
   <div class="pop-up">
     <div class="pop-up__container">
-      <div class="pop-up__close-button">
-        <img class="pop-up__close-button-image" src="./images/pop-up/Close-Icon.png">
-      </div>
+      <button class="pop-up__close-button"></button>
       <h2 class="pop-up__title">Редактировать профиль</h2>
       <form class="pop-up__form">
         <fieldset class="pop-up__form-container">
-          <input class="pop-up__form-item pop-up__form-item_el_name" type="text">
-          <input class="pop-up__form-item pop-up__form-item_el_caption" type="text">
+          <input class="pop-up__form-item pop-up__form-item_el_name" type="text" id="name" name="name">
+          <input class="pop-up__form-item pop-up__form-item_el_caption" type="text" id="caption">
         </fieldset>
         <button class="pop-up__submit-button" type="submit">Сохранить</button>
       </form>

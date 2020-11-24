@@ -1,7 +1,12 @@
 .pop-up__close-button {
-  margin: -48px -48px 0 0;
-  display: flex;
-  justify-content: flex-end;
+  margin: -48px -468px 0 0;
+  width: 58px;
+  height: 58px;
+  background-image: url(../../../images/Pop-Up/Close-Icon.png);
+  background-color: transparent;
+  border: none;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .pop-up__close-button:hover {
@@ -11,4 +16,11 @@
 
 .pop-up__close-button:focus {
   outline:none;
+}
+
+/* Cтили для для разрешения до 638px */
+@media screen and (max-width: 638px) {
+  .pop-up__close-button {
+    margin: -75px 0 30px 246px;
+  }
 }

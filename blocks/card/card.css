@@ -1,9 +1,9 @@
-.element {
+.card {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 282px 80px;
   justify-self: center;
 }

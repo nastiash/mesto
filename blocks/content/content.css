@@ -9,5 +9,5 @@
   grid-template-rows: auto;
   grid-template-areas:
     'profile profile profile'
-    'elements elements elements';
+    'cards cards cards';
 }

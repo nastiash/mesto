@@ -1,4 +1,4 @@
-.element__like-button {
+.card__like-button {
   margin-right: 21px;
   display: block;
   width: 21px;
@@ -9,14 +9,13 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-color: white;
-  background-image: url(../../../../images/Element/like-button_disabled.svg);
 }
 
-.element__like-button:hover {
+.card__like-button:hover {
   opacity: .5;
   cursor: pointer;
 }
 
-.element__like-button:focus {
+.card__like-button:focus {
   outline:none;
 }
