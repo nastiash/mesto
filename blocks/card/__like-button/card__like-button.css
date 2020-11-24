@@ -6,9 +6,11 @@
   padding: 0;
   border: none;
   justify-self: end;
+  background-image: url(../../../../images/Card/like-button_disabled.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-color: white;
+  outline: none;
 }
 
 .card__like-button:hover {
@@ -18,4 +20,8 @@
 
 .card__like-button:focus {
   outline:none;
+}
+
+.card__like-button:active {
+  background-image: url(../../../../images/Card/like-button_active.svg);
 }
