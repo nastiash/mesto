@@ -2,7 +2,7 @@
   margin: -48px -468px 0 0;
   width: 58px;
   height: 58px;
-  background-image: url(../../../images/Pop-Up/Close-Icon.png);
+  background-image: url(../../../images/Pop-Up/Close-Icon.svg);
   background-color: transparent;
   border: none;
   background-size: contain;
@@ -21,6 +21,8 @@
 /* Cтили для для разрешения до 638px */
 @media screen and (max-width: 638px) {
   .pop-up__close-button {
-    margin: -75px 0 30px 246px;
+    width: 38px;
+    height: 38px;
+    margin: -50px 0 20px 248px;
   }
 }

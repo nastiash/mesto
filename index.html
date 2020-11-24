@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesto для обмена фотографиями</title>
   <link rel="stylesheet" href="./pages/index.css">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 <body class="page">
   <header class="header">
@@ -15,55 +15,55 @@
     <section class="profile" aria-label="личный профиль">
       <img class="profile__avatar" src="./images/Profile/Avatar.png" alt="аватар профиля">
       <div class="profile__info">
-        <h2 class="profile__name">Жак-Ив Кусто</h2>
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
         <p class="profile__caption">Исследователь океана</p>
-        <button class="profile__edit-button"></button>
+        <button class="profile__edit-button" type="button"></button>
       </div>
-      <button class="profile__add-button"></button>
+      <button class="profile__add-button" type="button" aria-label="edit"></button>
     </section>
     <section class="cards" aria-label="фотографии">
-        <div class="card">
+        <article class="card">
           <img class="card__photo" src="./images/Card/Moscow.jpg" alt="Ночной район Москва Сити">
           <div class="card__caption">
-            <p class="card__title">Москва</p>
-            <button class="card__like-button card__like-button_disabled"></button>
+            <h2 class="card__title">Москва</h2>
+            <button class="card__like-button" type="button" aria-label="like"></button>
           </div>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <img class="card__photo" src="./images/Card/Helsinki.jpg" alt="Закат на проспекте в Хельсинки">
           <div class="card__caption">
-            <p class="card__title">Хельсинки</p>
-            <button class="card__like-button card__like-button_disabled"></button>
+            <h2 class="card__title">Хельсинки</h2>
+            <button class="card__like-button" type="button" aria-label="like"></button>
           </div>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <img class="card__photo" src="./images/Card/Maldives.jpg" alt="Пальмы на вечернем пляже Мальдивских островов">
           <div class="card__caption">
-            <p class="card__title">Мальдивские острова</p>
-            <button class="card__like-button card__like-button_disabled"></button>
+            <h2 class="card__title">Мальдивские острова</h2>
+            <button class="card__like-button" type="button" aria-label="like"></button>
           </div>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <img class="card__photo" src="./images/Card/Singapour.jpg" alt="Рынок в Сингапуре">
           <div class="card__caption">
-            <p class="card__title">Сингапур</p>
-            <button class="card__like-button card__like-button_disabled"></button>
+            <h2 class="card__title">Сингапур</h2>
+            <button class="card__like-button" type="button" aria-label="like"></button>
           </div>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <img class="card__photo" src="./images/Card/Tokio.jpg" alt="Яркий Токио">
           <div class="card__caption">
-            <p class="card__title">Токио</p>
-            <button class="card__like-button card__like-button_disabled"></button>
+            <h2 class="card__title">Токио</h2>
+            <button class="card__like-button" type="button" aria-label="like"></button>
           </div>
-        </div>
-        <div class="card">
+        </article>
+        <article class="card">
           <img class="card__photo" src="./images/Card/Vladivostok.jpg" alt="Ночной Владивосток">
           <div class="card__caption">
-            <p class="card__title">Владивосток</p>
-            <button class="card__like-button card__like-button_disabled"></button>
+            <h2 class="card__title">Владивосток</h2>
+            <button class="card__like-button" type="button" aria-label="like"></button>
           </div>
-        </div>
+        </article>
     </section>
   </main>
   <footer class="footer">
@@ -71,17 +71,17 @@
   </footer>
   <div class="pop-up">
     <div class="pop-up__container">
-      <button class="pop-up__close-button"></button>
+      <button class="pop-up__close-button" type="button" aria-label="close"></button>
       <h2 class="pop-up__title">Редактировать профиль</h2>
-      <form class="pop-up__form">
+      <form class="pop-up__form" name="edit-profile" id="edit-profile">
         <fieldset class="pop-up__form-container">
           <input class="pop-up__form-item pop-up__form-item_el_name" type="text" id="name" name="name">
           <input class="pop-up__form-item pop-up__form-item_el_caption" type="text" id="caption">
         </fieldset>
-        <button class="pop-up__submit-button" type="submit">Сохранить</button>
+        <button class="pop-up__submit-button" type="submit" aria-label="submit">Сохранить</button>
       </form>
     </div>
   </div>
-  <script src="./index.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
