@@ -22,5 +22,5 @@
 }
 
 .card__like-button:active {
-  background-image: url(../../../../images/Card/like-button_active.svg);
+  background-image: url(../../../images/Card/like-button_active.svg);
 }
