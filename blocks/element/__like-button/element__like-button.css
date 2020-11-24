@@ -9,9 +9,14 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-color: white;
+  background-image: url(../../../../images/Element/like-button_disabled.svg);
 }
 
 .element__like-button:hover {
   opacity: .5;
   cursor: pointer;
+}
+
+.element__like-button:focus {
+  outline:none;
 }

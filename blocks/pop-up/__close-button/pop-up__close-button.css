@@ -3,3 +3,12 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.pop-up__close-button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+.pop-up__close-button:focus {
+  outline:none;
+}

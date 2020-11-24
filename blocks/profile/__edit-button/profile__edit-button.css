@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-color: black;
   border: none;
-  align-self: end;
+  align-self: center;
 }
 
 .profile__edit-button:hover {
@@ -16,11 +16,8 @@
   cursor: pointer;
 }
 
-/* Cтили для для разрешения до 920px */
-@media screen and (max-width: 920px) {
-  .profile__edit-button {
-    align-self: center;
-  }
+.profile__edit-button:focus {
+  outline:none;
 }
 
 /* Cтили для для разрешения до 380px */

@@ -1,8 +1,16 @@
 .pop-up__container {
   width: 430px;
-  height: 330px;
   position: absolute;
   background: white;
   border-radius: 10px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  padding-bottom: 37px;
+}
+
+/* Cтили для для разрешения до 638px */
+@media screen and (max-width: 638px) {
+  .pop-up__container {
+    width: 282px;
+    padding-bottom: 25px;
+  }
 }

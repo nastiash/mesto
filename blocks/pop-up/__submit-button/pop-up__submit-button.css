@@ -11,3 +11,23 @@
   font-size: 18px;
   line-height: calc(22 / 18);
 }
+
+.pop-up__submit-button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+.pop-up__submit-button:focus {
+  outline:none;
+}
+
+/* Cтили для для разрешения до 638px */
+@media screen and (max-width: 638px) {
+  .pop-up__submit-button {
+    width: 238px;
+    height: 46px;
+    margin-left: 22px;
+    font-size: 14px;
+    line-height: calc(17 / 14);
+  }
+}
