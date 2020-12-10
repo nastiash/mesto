@@ -47,28 +47,28 @@ function closeAddPopup() {
 //массив с карточками
 const initialCards = [
   {
-      name: 'Москва',
-      link: 'https://images.unsplash.com/photo-1540886955408-0307191f4139',
+      name: 'Бикини Боттом',
+      link: 'https://i.ibb.co/NLKw6WG/bikini-bottom.jpg',
   },
   {
-      name: 'Хельсинки',
-      link: 'https://images.unsplash.com/photo-1545302207-884aa31e4265',
+      name: 'Красти Планктон',
+      link: 'https://i.ibb.co/c8Ct20y/krusty-plankton.jpg',
   },
   {
-      name: 'Мальдивские острова',
-      link: 'https://images.unsplash.com/photo-1561571994-3c61c554181a',
+      name: 'Тюрьма 😱',
+      link: 'https://i.ibb.co/HBqnT4G/Jail.jpg',
   },
   {
-      name: 'Сингапур',
-      link: 'https://images.unsplash.com/photo-1450170391895-b790726e2318',
+      name: 'Поля медуз',
+      link: 'https://i.ibb.co/7JKD50c/jellyfish-fields.jpg',
   },
   {
-      name: 'Токио',
-      link: 'https://images.unsplash.com/photo-1580094573009-7a220cc896b2',
+      name: 'Дом Белки',
+      link: 'https://i.ibb.co/QJ5QGWY/squirrel.jpg',
   },
   {
-      name: 'Владивосток',
-      link: 'https://images.unsplash.com/photo-1530454792524-93bc6f892426',
+      name: 'Красти Краб',
+      link: 'https://i.ibb.co/znZGSMp/krusty-krab.jpg',
   }
 ];
 
@@ -85,8 +85,21 @@ function composeCard({name, link}) {
   const newItem = templateElement.content.cloneNode(true);
   const cardTitle = newItem.querySelector('.card__title');
   const cardPhoto = newItem.querySelector('.card__photo');
+  const cardLike = newItem.querySelector('.card__like-button');
+  const cardDeleteButton = newItem.querySelector('.card__delete-button');
   cardTitle.textContent = name;
   cardPhoto.src = link;
+  cardPhoto.alt = name;
+  //открытие попапа с картинкой
+  cardPhoto.addEventListener('click', () => {
+    composeImagePopup(name, link);
+  });
+  //лайк
+  cardLike.addEventListener('click', () => {
+    cardLike.classList.toggle('card__like-button_active');
+  });
+  //удаление элемента
+  cardDeleteButton.addEventListener('click', cardDelete);
   return newItem;
 }
 
@@ -104,12 +117,35 @@ function addNewCard(event) {
   closeAddPopup();
 }
 
-//лайки
-const likeButtonList = document.querySelectorAll('.card__like-button');
 
-function likeCard(event) {
-  const targetLikeButton = event.target.closest('.card__like-button');
-  targetLikeButton.classList.toggle('.card__like-button:active');
+//собрать и открыть попап большой картинки
+const imagePopup = document.querySelector('.pop-up_content_image');
+
+const composeImagePopup = (name, link) => {
+  openImagePopup();
+      const popupText = imagePopup.querySelector('.pop-up__text');
+      const popupPhoto = imagePopup.querySelector('.pop-up__big-image');
+      popupText.textContent = name;
+      popupPhoto.src = link;
+      popupPhoto.alt = name;
+  };
+
+//открыть попап большой картинки
+function openImagePopup() {
+  imagePopup.classList.add('pop-up_opened');
+}
+
+//закрыть попап большой картинки
+const closeImageButton = document.querySelector('.pop-up__close-button_content_image');
+
+function closeimagePopup() {
+  imagePopup.classList.remove('pop-up_opened');
+}
+
+//удалить карточку
+function cardDelete(event){
+  const targetItem = event.target.closest('.card');
+  targetItem.remove();
 }
 
 // слушатели
@@ -121,4 +157,4 @@ addButton.addEventListener('click', openAddPopup); //открытие попап
 closeAddButton.addEventListener('click', closeAddPopup); //закрытие попапа добавления карточки
 addPopup.addEventListener('submit', addNewCard); //сабмит попапа добавления карточки
 
-likeButtonList.forEach(() => {addEventListener('click', likeCard)});
+closeImageButton.addEventListener('click', closeimagePopup); //закрытие попапа большой картинки

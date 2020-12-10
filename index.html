@@ -24,59 +24,19 @@
     <section class="cards" aria-label="фотографии">
       <template class="card-template">
       <article class="card">
-        <img class="card__photo" src="" alt="#">
+        <div class="card__image-container">
+          <button class="card__delete-button" type="button" aria-label="delete"></button>
+          <img class="card__photo" src="" alt="">
+      </div>
         <div class="card__caption">
           <h2 class="card__title"></h2>
           <button class="card__like-button" type="button" aria-label="like"></button>
         </div>
       </template>
-<!--      </article>
-        <article class="card">
-          <img class="card__photo" src="./images/Card/Moscow.jpg" alt="Ночной район Москва Сити">
-          <div class="card__caption">
-            <h2 class="card__title">Москва</h2>
-            <button class="card__like-button" type="button" aria-label="like"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__photo" src="./images/Card/Helsinki.jpg" alt="Закат на проспекте в Хельсинки">
-          <div class="card__caption">
-            <h2 class="card__title">Хельсинки</h2>
-            <button class="card__like-button" type="button" aria-label="like"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__photo" src="./images/Card/Maldives.jpg" alt="Пальмы на вечернем пляже Мальдивских островов">
-          <div class="card__caption">
-            <h2 class="card__title">Мальдивские острова</h2>
-            <button class="card__like-button" type="button" aria-label="like"></button>
-          </div>
-        </article>
-       <article class="card">
-          <img class="card__photo" src="./images/Card/Singapour.jpg" alt="Ночной Сингапур">
-          <div class="card__caption">
-            <h2 class="card__title">Сингапур</h2>
-            <button class="card__like-button" type="button" aria-label="like"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__photo" src="./images/Card/Tokio.jpg" alt="Яркий Токио">
-          <div class="card__caption">
-            <h2 class="card__title">Токио</h2>
-            <button class="card__like-button" type="button" aria-label="like"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card__photo" src="./images/Card/Vladivostok.jpg" alt="Ночной Владивосток">
-          <div class="card__caption">
-            <h2 class="card__title">Владивосток</h2>
-            <button class="card__like-button" type="button" aria-label="like"></button>
-          </div>
-        </article> -->
     </section>
   </main>
   <footer class="footer">
-    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    <p class="footer__copyright">&copy; 2020 Mesto Bikini Bottom</p>
   </footer>
   <div class="pop-up pop-up_content_edit-profile">
     <div class="pop-up__container">
@@ -102,6 +62,13 @@
         </fieldset>
         <button class="pop-up__submit-button" type="submit" aria-label="submit">Создать</button>
       </form>
+    </div>
+  </div>
+  <div class='pop-up pop-up_content_image'>
+    <div class='pop-up__container pop-up__container_content_image'>
+      <button class="pop-up__close-button pop-up__close-button_content_image" type="button" aria-label="close"></button>
+      <img src='' alt='' class="pop-up__big-image">
+      <figcaption class="pop-up__text"></figcaption>
     </div>
   </div>
   <script src="./scripts/index.js"></script>

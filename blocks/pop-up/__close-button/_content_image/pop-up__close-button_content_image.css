@@ -1,0 +1,12 @@
+.pop-up__close-button_content_image {
+  margin: 0 -740px -8px 0;
+}
+
+/* Cтили для для разрешения до 638px */
+@media screen and (max-width: 638px) {
+  .pop-up__close-button_content_image {
+    width: 38px;
+    height: 38px;
+    margin: 0 -265px -5px 0;
+  }
+}
