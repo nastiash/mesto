@@ -39,4 +39,6 @@
 @import url(../blocks/pop-up/__form-item/pop-up__form-item.css);
 @import url(../blocks/pop-up/__form-item/_el_name/pop-up__form-item_el_name.css);
 @import url(../blocks/pop-up/__form-item/_el_caption/pop-up__form-item_el_caption.css);
+@import url(../blocks/pop-up/__form-item/_el_link/pop-up__form-item_el_link.css);
+@import url(../blocks/pop-up/__form-item/_el_place/pop-up__form-item_el_place.css);
 @import url(../blocks/pop-up/__submit-button/pop-up__submit-button.css);

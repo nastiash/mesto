@@ -1,0 +1,15 @@
+.pop-up__form-item_el_place {
+
+}
+
+.pop-up__form-item_el_place:focus {
+  outline:none;
+}
+
+.pop-up__form-item_el_place::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  color: #c4c4c4;
+}

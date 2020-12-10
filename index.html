@@ -15,13 +15,22 @@
     <section class="profile" aria-label="личный профиль">
       <img class="profile__avatar" src="./images/Profile/Avatar.png" alt="аватар профиля">
       <div class="profile__info">
-        <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <p class="profile__caption">Исследователь океана</p>
+        <h1 class="profile__name">Губка Боб</h1>
+        <p class="profile__caption">Проживает на дне океана</p>
         <button class="profile__edit-button" type="button"></button>
       </div>
       <button class="profile__add-button" type="button" aria-label="edit"></button>
     </section>
     <section class="cards" aria-label="фотографии">
+      <template class="card-template">
+      <article class="card">
+        <img class="card__photo" src="" alt="#">
+        <div class="card__caption">
+          <h2 class="card__title"></h2>
+          <button class="card__like-button" type="button" aria-label="like"></button>
+        </div>
+      </template>
+<!--      </article>
         <article class="card">
           <img class="card__photo" src="./images/Card/Moscow.jpg" alt="Ночной район Москва Сити">
           <div class="card__caption">
@@ -43,8 +52,8 @@
             <button class="card__like-button" type="button" aria-label="like"></button>
           </div>
         </article>
-        <article class="card">
-          <img class="card__photo" src="./images/Card/Singapour.jpg" alt="Рынок в Сингапуре">
+       <article class="card">
+          <img class="card__photo" src="./images/Card/Singapour.jpg" alt="Ночной Сингапур">
           <div class="card__caption">
             <h2 class="card__title">Сингапур</h2>
             <button class="card__like-button" type="button" aria-label="like"></button>
@@ -63,22 +72,35 @@
             <h2 class="card__title">Владивосток</h2>
             <button class="card__like-button" type="button" aria-label="like"></button>
           </div>
-        </article>
+        </article> -->
     </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
-  <div class="pop-up">
+  <div class="pop-up pop-up_content_edit-profile">
     <div class="pop-up__container">
       <button class="pop-up__close-button" type="button" aria-label="close"></button>
       <h2 class="pop-up__title">Редактировать профиль</h2>
-      <form class="pop-up__form" name="edit-profile" id="edit-profile">
+      <form class="pop-up__form pop-up__form_content_edit-profile" name="edit-profile" id="edit-profile">
         <fieldset class="pop-up__form-container">
           <input class="pop-up__form-item pop-up__form-item_el_name" type="text" id="name" name="name">
-          <input class="pop-up__form-item pop-up__form-item_el_caption" type="text" id="caption">
+          <input class="pop-up__form-item pop-up__form-item_el_caption" type="text" id="caption" name="caption">
         </fieldset>
         <button class="pop-up__submit-button" type="submit" aria-label="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <div class="pop-up pop-up_content_add-card">
+    <div class="pop-up__container">
+      <button class="pop-up__close-button pop-up__close-button_content_add-card" type="button" aria-label="close"></button>
+      <h2 class="pop-up__title">Новое место</h2>
+      <form class="pop-up__form pop-up__form_content_add-card" name="add-card" id="add-card">
+        <fieldset class="pop-up__form-container">
+          <input class="pop-up__form-item pop-up__form-item_el_place" type="text" id="place" name="place" placeholder="Название">
+          <input class="pop-up__form-item pop-up__form-item_el_link" type="text" id="link" name="link" placeholder="Ссылка на картинку">
+        </fieldset>
+        <button class="pop-up__submit-button" type="submit" aria-label="submit">Создать</button>
       </form>
     </div>
   </div>
