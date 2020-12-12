@@ -1,7 +1,8 @@
 .pop-up__title {
   max-width: 358px;
   color: black;
-  margin: 25px 0 36px;
+  margin: 25px auto 36px 0;
+  padding-left: 36px;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -11,7 +12,8 @@
 /* Cтили для для разрешения до 638px */
 @media screen and (max-width: 638px) {
   .pop-up__title {
-    margin: 17px 22px 68px 22px;
+    margin: 17px auto 68px 0;
+    padding-left: 22px;
     font-size: 18px;
     line-height: calc(22 / 18);
   }

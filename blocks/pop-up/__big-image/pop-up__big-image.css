@@ -1,5 +1,14 @@
 .pop-up__big-image {
-  max-width: 75vw;
-  max-height: 75vh;
+  width: 75vw;
+  max-height: calc(75vh - 58px - 15px);
   object-fit: cover;
+  margin-top: -5px;
+}
+
+/* Cтили для для разрешения до 638px */
+@media screen and (max-width: 638px) {
+  .pop-up__big-image {
+    max-height: calc(75vh - 38px - 15px);
+    margin-top: 0;
+  }
 }

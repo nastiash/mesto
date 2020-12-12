@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mesto для обмена фотографиями</title>
-  <link rel="stylesheet" href="./pages/index.css">
-  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-</head>
-<body class="page">
-  <header class="header">
-    <div class="logo logo_theme_dark"></div>
-  </header>
-  <main class="content">
-    <section class="profile" aria-label="личный профиль">
-      <img class="profile__avatar" src="./images/Profile/Avatar.png" alt="аватар профиля">
-      <div class="profile__info">
-        <h1 class="profile__name">Губка Боб</h1>
-        <p class="profile__caption">Проживает на дне океана</p>
-        <button class="profile__edit-button" type="button"></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesto для обмена фотографиями</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="logo logo_theme_dark"></div>
+    </header>
+    <main class="content">
+      <section class="profile" aria-label="личный профиль">
+        <img class="profile__avatar" src="./images/Profile/Avatar.png" alt="аватар профиля" />
+        <div class="profile__info">
+          <h1 class="profile__name">Губка Боб</h1>
+          <p class="profile__caption">Проживает на дне океана</p>
+          <button class="profile__edit-button" type="button"></button>
+        </div>
+        <button class="profile__add-button" type="button" aria-label="редактировать профиль"></button>
+      </section>
+      <section class="cards" aria-label="фотографии">
+        <template class="card-template">
+          <article class="card">
+            <div class="card__image-container">
+              <button class="card__delete-button" type="button" aria-label="удалить карточку"></button>
+              <img class="card__photo" src="#" alt="#" />
+            </div>
+            <div class="card__caption">
+              <h2 class="card__title"></h2>
+              <button class="card__like-button" type="button" aria-label="нравится карточка"></button>
+            </div>
+          </article>
+        </template>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Mesto Bikini Bottom</p>
+    </footer>
+    <div class="pop-up pop-up_content_edit-profile">
+      <div class="pop-up__container">
+        <button class="pop-up__close-button pop-up__close-button_content_edit" type="button" aria-label="закрыть окно"></button>
+        <h2 class="pop-up__title">Редактировать профиль</h2>
+        <form class="pop-up__form pop-up__form_content_edit-profile" name="edit-profile" id="edit-profile">
+          <fieldset class="pop-up__form-container">
+            <input class="pop-up__form-item pop-up__form-item_el_name" type="text" id="name" name="name" required />
+            <input class="pop-up__form-item pop-up__form-item_el_caption" type="text" id="caption" name="caption" required />
+          </fieldset>
+          <button class="pop-up__submit-button" type="submit" aria-label="сохранить изменения">Сохранить</button>
+        </form>
       </div>
-      <button class="profile__add-button" type="button" aria-label="edit"></button>
-    </section>
-    <section class="cards" aria-label="фотографии">
-      <template class="card-template">
-      <article class="card">
-        <div class="card__image-container">
-          <button class="card__delete-button" type="button" aria-label="delete"></button>
-          <img class="card__photo" src="#" alt="#">
-        </div>
-        <div class="card__caption">
-          <h2 class="card__title"></h2>
-          <button class="card__like-button" type="button" aria-label="like"></button>
-        </div>
-      </article>
-      </template>
-    </section>
-  </main>
-  <footer class="footer">
-    <p class="footer__copyright">&copy; 2020 Mesto Bikini Bottom</p>
-  </footer>
-  <div class="pop-up pop-up_content_edit-profile">
-    <div class="pop-up__container">
-      <button class="pop-up__close-button" type="button" aria-label="close"></button>
-      <h2 class="pop-up__title">Редактировать профиль</h2>
-      <form class="pop-up__form pop-up__form_content_edit-profile" name="edit-profile" id="edit-profile">
-        <fieldset class="pop-up__form-container">
-          <input class="pop-up__form-item pop-up__form-item_el_name" type="text" id="name" name="name">
-          <input class="pop-up__form-item pop-up__form-item_el_caption" type="text" id="caption" name="caption">
-        </fieldset>
-        <button class="pop-up__submit-button" type="submit" aria-label="submit">Сохранить</button>
-      </form>
     </div>
-  </div>
-  <div class="pop-up pop-up_content_add-card">
-    <div class="pop-up__container">
-      <button class="pop-up__close-button pop-up__close-button_content_add-card" type="button" aria-label="close"></button>
-      <h2 class="pop-up__title">Новое место</h2>
-      <form class="pop-up__form pop-up__form_content_add-card" name="add-card" id="add-card">
-        <fieldset class="pop-up__form-container">
-          <input class="pop-up__form-item pop-up__form-item_el_place" type="text" id="place" name="place" placeholder="Название">
-          <input class="pop-up__form-item pop-up__form-item_el_link" type="text" id="link" name="link" placeholder="Ссылка на картинку">
-        </fieldset>
-        <button class="pop-up__submit-button" type="submit" aria-label="submit">Создать</button>
-      </form>
+    <div class="pop-up pop-up_content_add-card">
+      <div class="pop-up__container">
+        <button class="pop-up__close-button pop-up__close-button_content_add-card" type="button" aria-label="close"></button>
+        <h2 class="pop-up__title">Новое место</h2>
+        <form class="pop-up__form pop-up__form_content_add-card" name="add-card" id="add-card">
+          <fieldset class="pop-up__form-container">
+            <input class="pop-up__form-item pop-up__form-item_el_place" type="text" id="place" name="place" placeholder="Название" required />
+            <input class="pop-up__form-item pop-up__form-item_el_link" type="url" id="link" name="link" placeholder="Ссылка на картинку" required />
+          </fieldset>
+          <button class="pop-up__submit-button" type="submit" aria-label="создать карточку">Создать</button>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class='pop-up pop-up_content_image'>
-    <div class='pop-up__container pop-up__container_content_image'>
-      <button class="pop-up__close-button pop-up__close-button_content_image" type="button" aria-label="close"></button>
-      <img src='#' alt='#' class="pop-up__big-image">
-      <p class="pop-up__text"></p>
+    <div class="pop-up pop-up_content_image">
+      <div class="pop-up__container pop-up__container_content_image">
+        <button class="pop-up__close-button pop-up__close-button_content_image" type="button" aria-label="закрыть окно"></button>
+        <img src="#" alt="#" class="pop-up__big-image" />
+        <p class="pop-up__text"></p>
+      </div>
     </div>
-  </div>
-  <script src="./scripts/index.js"></script>
-</body>
+    <script src="./scripts/index.js"></script>
+  </body>
 </html>

@@ -1,15 +1,19 @@
 .profile__info {
   display: grid;
-  grid-template-columns:  fit-content(294px) 1fr;
+  grid-template-columns: fit-content(294px) 1fr;
   grid-row-gap: 16px;
   column-gap: 18px;
   align-self: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Cтили для для разрешения до 380px */
 @media screen and (max-width: 380px) {
   .profile__info {
+    grid-template-columns: 1fr 18px;
     grid-row-gap: 8px;
-    column-gap: 18px;
+    column-gap: 10px;
   }
 }
