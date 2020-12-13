@@ -1,6 +1,3 @@
-const popup = document.querySelector(".pop-up");
-const closeButton = document.querySelector(".pop-up__close-button");
-
 const editPopup = document.querySelector(".pop-up_content_edit-profile");
 const addPopup = document.querySelector(".pop-up_content_add-card");
 const imagePopup = document.querySelector(".pop-up_content_image");
@@ -74,11 +71,18 @@ const initialCards = [
   },
 ];
 
-//отрисовка стартовых карточек
-function renderCardList() {
-  const cardItems = initialCards.map(composeCard);
-  cardsContainerElement.append(...cardItems);
+//удалить карточку
+function deleteCard(event) {
+  event.target.closest(".card").remove();
 }
+
+//собрать и открыть попап большой картинки
+const composeImagePopup = (name, link) => {
+  openPopup(imagePopup);
+  popupText.textContent = name;
+  popupPhoto.src = link;
+  popupPhoto.alt = name;
+};
 
 //собрать карточку
 function composeCard({ name, link }) {
@@ -103,6 +107,12 @@ function composeCard({ name, link }) {
   return newItem;
 }
 
+//отрисовка стартовых карточек
+function renderCardList() {
+  const cardItems = initialCards.map(composeCard);
+  cardsContainerElement.append(...cardItems);
+}
+
 renderCardList();
 
 //добавление новой карточки
@@ -113,19 +123,6 @@ function addNewCard(event) {
   inputTitle.value = "";
   inputLink.value = "";
   closePopup(addPopup);
-}
-
-//собрать и открыть попап большой картинки
-const composeImagePopup = (name, link) => {
-  openPopup(imagePopup);
-  popupText.textContent = name;
-  popupPhoto.src = link;
-  popupPhoto.alt = name;
-};
-
-//удалить карточку
-function deleteCard(event) {
-  event.target.closest(".card").remove();
 }
 
 // слушатели открытия попапов
