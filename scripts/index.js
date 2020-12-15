@@ -25,6 +25,9 @@ const popupPhoto = imagePopup.querySelector(".pop-up__big-image");
 const profileName = document.querySelector(".profile__name");
 const profileCaption = document.querySelector(".profile__caption");
 
+const popup = document.querySelector(".pop-up");
+const popupContainer = document.querySelector(".pop-up__container");
+
 // открытие попапа
 const openPopup = (popup) => {
   popup.classList.add("pop-up_opened");
@@ -125,6 +128,7 @@ function addNewCard(event) {
   closePopup(addPopup);
 }
 
+
 // слушатели открытия попапов
 editButton.addEventListener("click", () => {
   openPopup(editPopup);
@@ -148,6 +152,32 @@ addCloseButton.addEventListener("click", () => {
 
 imageCloseButton.addEventListener("click", () => {
   closePopup(imagePopup);
+});
+
+//слушатели закрытия по оверлею
+editPopup.addEventListener("click", function (event) {
+  const target = event.target;
+  if (target.closest(".pop-up__container")) event.stopPropagation();
+  else if (target.closest(".pop-up_content_edit-profile")) closePopup(editPopup);
+});
+
+addPopup.addEventListener("click", function (event) {
+  const target = event.target;
+  if (target.closest(".pop-up__container")) event.stopPropagation();
+  else if (target.closest(".pop-up_content_add-card")) closePopup(addPopup);
+});
+
+imagePopup.addEventListener("click", function (event) {
+  const target = event.target;
+  if (target.closest(".pop-up__container")) event.stopPropagation();
+  else if (target.closest(".pop-up_content_image")) closePopup(imagePopup);
+});
+
+//слушатели закрытия попапов по ESC
+document.addEventListener("keyup", (event) => {
+  const activePopup = document.querySelector(".pop-up_opened");
+  console.log(activePopup);
+  if (event.key === "Escape" && activePopup != null) closePopup(activePopup);
 });
 
 // слушатели сабмитов
