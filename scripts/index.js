@@ -28,14 +28,24 @@ const profileCaption = document.querySelector(".profile__caption");
 const popup = document.querySelector(".pop-up");
 const popupContainer = document.querySelector(".pop-up__container");
 
+// закрытие попапа через ESC
+const closePopupWithEsc = (event) => {
+  const activePopup = document.querySelector(".pop-up_opened");
+  console.log(activePopup);
+  if (event.key === "Escape") closePopup(activePopup);
+};
+
 // открытие попапа
 const openPopup = (popup) => {
   popup.classList.add("pop-up_opened");
+  document.addEventListener("keyup", closePopupWithEsc);
+  console.log(popup);
 };
 
 // закрытие попапа
 const closePopup = (popup) => {
   popup.classList.remove("pop-up_opened");
+  document.removeEventListener("keyup", closePopupWithEsc);
 };
 
 // запись значений из формы редактирования в профиль
@@ -129,6 +139,22 @@ function addNewCard(event) {
 }
 
 
+/*
+//валидация
+// включение валидации вызовом enableValidation
+// все настройки передаются при вызове
+
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+});
+*/
+
+
 // слушатели открытия попапов
 editButton.addEventListener("click", () => {
   openPopup(editPopup);
@@ -174,11 +200,13 @@ imagePopup.addEventListener("click", function (event) {
 });
 
 //слушатели закрытия попапов по ESC
-document.addEventListener("keyup", (event) => {
+/*
+  document.addEventListener("keyup", (event) => {
   const activePopup = document.querySelector(".pop-up_opened");
   console.log(activePopup);
   if (event.key === "Escape" && activePopup != null) closePopup(activePopup);
 });
+*/
 
 // слушатели сабмитов
 profileForm.addEventListener("submit", submitProfileForm);
