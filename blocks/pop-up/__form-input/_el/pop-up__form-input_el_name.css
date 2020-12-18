@@ -1,0 +1,11 @@
+.pop-up__form-input_el_name {
+
+}
+
+.pop-up__form-input_el_name:focus {
+  outline:none;
+}
+
+.pop-up__form-input_el_name:invalid {
+  border-bottom: 1px solid #FF0000;
+}

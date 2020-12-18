@@ -1,0 +1,7 @@
+.pop-up__form-input_el_caption:focus {
+  outline:none;
+}
+
+.pop-up__form-input_el_caption:invalid {
+  border-bottom: 1px solid #FF0000;
+}

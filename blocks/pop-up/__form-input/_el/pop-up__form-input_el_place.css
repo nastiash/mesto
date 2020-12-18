@@ -1,0 +1,15 @@
+.pop-up__form-input_el_place:focus {
+  outline:none;
+}
+
+.pop-up__form-input_el_place::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  color: #c4c4c4;
+}
+
+.pop-up__form-input_el_place:invalid {
+  border-bottom: 1px solid #FF0000;
+}

@@ -43,10 +43,12 @@
       <div class="pop-up__container">
         <button class="pop-up__close-button pop-up__close-button_content_edit" type="button" aria-label="закрыть окно"></button>
         <h2 class="pop-up__title">Редактировать профиль</h2>
-        <form class="pop-up__form pop-up__form_content_edit-profile" name="edit-profile" id="edit-profile">
+        <form class="pop-up__form pop-up__form_content_edit-profile" name="form-edit-profile" id="form-edit-profile" novalidate>
           <fieldset class="pop-up__form-container">
-            <input class="pop-up__form-item pop-up__form-item_el_name" type="text" id="name" name="name" required />
-            <input class="pop-up__form-item pop-up__form-item_el_caption" type="text" id="caption" name="caption" required />
+            <input class="pop-up__form-input pop-up__form-input_el_name" type="text" id="input_el_name" name="name" required>
+            <span class="pop-up__input-error pop-up__form-input_el_name-error" id="input_el_name-error"></span>
+            <input class="pop-up__form-input pop-up__form-input_el_caption" type="text" id="input_el_caption" name="caption" required>
+            <span class="pop-up__input-error pop-up__form-input_el_caption-error" id="input_el_caption-error"></span>
           </fieldset>
           <button class="pop-up__submit-button" type="submit" aria-label="сохранить изменения">Сохранить</button>
         </form>
@@ -56,10 +58,12 @@
       <div class="pop-up__container">
         <button class="pop-up__close-button pop-up__close-button_content_add-card" type="button" aria-label="close"></button>
         <h2 class="pop-up__title">Новое место</h2>
-        <form class="pop-up__form pop-up__form_content_add-card" name="add-card" id="add-card">
+        <form class="pop-up__form pop-up__form_content_add-card" name="form-add-card" id="form-add-card" novalidate>
           <fieldset class="pop-up__form-container">
-            <input class="pop-up__form-item pop-up__form-item_el_place" type="text" id="place" name="place" placeholder="Название" required />
-            <input class="pop-up__form-item pop-up__form-item_el_link" type="url" id="link" name="link" placeholder="Ссылка на картинку" required />
+            <input class="pop-up__form-input pop-up__form-input_el_place" type="text" id="input_el_place" name="place" placeholder="Название" required>
+            <span class="pop-up__input-error pop-up__form-input_el_place-error" id="input_el_place-error"></span>
+            <input class="pop-up__form-input pop-up__form-input_el_link" type="url" id="input_el_link" name="link" placeholder="Ссылка на картинку" required>
+            <span class="pop-up__input-error pop-up__form-input_el_link-error" id="input_el_link-error"></span>
           </fieldset>
           <button class="pop-up__submit-button" type="submit" aria-label="создать карточку">Создать</button>
         </form>
@@ -68,7 +72,7 @@
     <div class="pop-up pop-up_content_image">
       <div class="pop-up__container pop-up__container_content_image">
         <button class="pop-up__close-button pop-up__close-button_content_image" type="button" aria-label="закрыть окно"></button>
-        <img src="#" alt="#" class="pop-up__big-image" />
+        <img src="#" alt="#" class="pop-up__big-image">
         <p class="pop-up__text"></p>
       </div>
     </div>

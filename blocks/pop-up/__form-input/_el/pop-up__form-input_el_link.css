@@ -1,0 +1,15 @@
+.pop-up__form-input_el_link:focus {
+  outline:none;
+}
+
+.pop-up__form-input_el_link::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  color: #c4c4c4;
+}
+
+.pop-up__form-input_el_link:invalid {
+  border-bottom: 1px solid #FF0000;
+}
