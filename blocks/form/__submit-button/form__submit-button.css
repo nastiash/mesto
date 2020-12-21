@@ -1,4 +1,4 @@
-.pop-up__submit-button {
+.form__submit-button {
   width: 358px;
   height: 50px;
   background-color: black;
@@ -11,18 +11,18 @@
   line-height: calc(22 / 18);
 }
 
-.pop-up__submit-button:hover {
+.form__submit-button:hover {
   opacity: .8;
   cursor: pointer;
 }
 
-.pop-up__submit-button:focus {
+.form__submit-button:focus {
   outline:none;
 }
 
 /* Cтили для для разрешения до 638px */
 @media screen and (max-width: 638px) {
-  .pop-up__submit-button {
+  .form__submit-button {
     width: 238px;
     height: 46px;
     font-size: 14px;

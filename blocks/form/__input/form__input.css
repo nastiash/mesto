@@ -15,6 +15,10 @@
   margin: 0 0 48px 0;
 }
 
+.form__input:focus {
+  outline:none;
+}
+
 /* Cтили для для разрешения до 638px */
 @media screen and (max-width: 638px) {
   .form__input {

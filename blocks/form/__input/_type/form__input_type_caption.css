@@ -1,7 +1,0 @@
-.form__input_type_caption:focus {
-  outline:none;
-}
-
-.form__input_type_caption:invalid {
-  border-bottom: 1px solid #FF0000;
-}

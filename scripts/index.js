@@ -14,7 +14,7 @@ const editProfilePopup = document.querySelector(".pop-up_content_edit-profile");
 const editProfileForm = document.querySelector(".form_content_edit-profile");
 const editProfileCloseButton = document.querySelector(".pop-up__close-button_content_edit");
 const editProfileInputName = document.querySelector(".form__input_type_name");
-const editProfileInputCaption = document.querySelector(".form__input_type_caption");
+const editProfileInputAbout = document.querySelector(".form__input_type_about");
 
 /*** ПОП-АП ДОБАВЛЕНИЯ КАРТОЧКИ ***/
 const addNewCardPopup = document.querySelector(".pop-up_content_add-card");
@@ -61,7 +61,7 @@ const closePopupWithOverlayClick = (event) => {
 function submitEditProfileForm(event) {
   event.preventDefault();
   profileName.textContent = editProfileInputName.value;
-  profileAbout.textContent = editProfileInputCaption.value;
+  profileAbout.textContent = editProfileInputAbout.value;
   closePopup(editProfilePopup);
 }
 
@@ -152,7 +152,7 @@ editProfileButton.addEventListener("click", () => {
   openPopup(editProfilePopup);
   //автозаполнение полей формы
   editProfileInputName.value = profileName.textContent;
-  editProfileInputCaption.value = profileAbout.textContent;
+  editProfileInputAbout.value = profileAbout.textContent;
 });
 
 addNewCardButton.addEventListener("click", () => {
