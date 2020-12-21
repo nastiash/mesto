@@ -1,4 +1,3 @@
-
 /*** ЭЛЕМЕНТЫ ПРОФИЛЯ ***/
 const editProfileButton = document.querySelector(".profile__edit-button");
 const addNewCardButton = document.querySelector(".profile__add-button");
@@ -28,7 +27,6 @@ const fullSizeImagePopup = document.querySelector(".pop-up_content_image");
 const fullSizeImageCloseButton = document.querySelector(".pop-up__close-button_content_image");
 const fullSizeImagePopupCaption = document.querySelector(".pop-up__image-caption");
 const fullSizeImagePopupPhoto = document.querySelector(".pop-up__big-image");
-
 
 // открытие попапов
 const openPopup = (popup) => {

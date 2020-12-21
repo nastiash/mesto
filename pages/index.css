@@ -44,18 +44,11 @@
 /* form */
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/_content/form_content_image.css);
-@import url(../blocks/form/__fieldset/form__fieldset.css);
 @import url(../blocks/form/__fields/form__fields.css);
 @import url(../blocks/form/__input/form__input.css);
-@import url(../blocks/form/__input/_type/form__input_type_about.css);
 @import url(../blocks/form/__input/_type/form__input_type_link.css);
-@import url(../blocks/form/__input/_type/form__input_type_name.css);
 @import url(../blocks/form/__input/_type/form__input_type_place.css);
 @import url(../blocks/form/__input-error/form__input-error.css);
 @import url(../blocks/form/__input/_state/form__input_state_invalid.css);
 @import url(../blocks/form/__submit-button/form__submit-button.css);
 @import url(../blocks/form/__submit-button/_state/form__submit-button_state_invalid.css);
-@import url(../blocks/form/__input-error/_type/form__input-error_type_caption.css);
-@import url(../blocks/form/__input-error/_type/form__input-error_type_link.css);
-@import url(../blocks/form/__input-error/_type/form__input-error_type_name.css);
-@import url(../blocks/form/__input-error/_type/form__input-error_type_place.css);

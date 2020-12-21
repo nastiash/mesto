@@ -14,12 +14,11 @@ function checkInputValidity(form, input, config) {
   if (input.validity.valid) {
     hideError(form, input, config);
   } else {
-    showError(form, input, config)
+    showError(form, input, config);
   }
 }
 
 function setButtonState(button, isActive, config) {
-  console.log(button, isActive);
   if (isActive) {
     button.classList.remove(config.buttonInvalidClass);
     button.disabled = false;
@@ -33,18 +32,18 @@ function setEventListener(form, config) {
   const inputList = form.querySelectorAll(config.inputSelector);
   const submitButton = form.querySelector(config.submitButtonSelector);
 
-  inputList.forEach(input => {
+  inputList.forEach((input) => {
     input.addEventListener("input", (event) => {
       checkInputValidity(form, input, config);
 
       setButtonState(submitButton, form.checkValidity(), config);
-    })
+    });
   });
 }
 
 function enableValidation(config) {
   const forms = document.querySelectorAll(config.formSelector);
-  forms.forEach(form => {
+  forms.forEach((form) => {
     setEventListener(form, config);
 
     form.addEventListener("submit", (event) => {
@@ -53,15 +52,15 @@ function enableValidation(config) {
 
     const submitButton = form.querySelector(config.submitButtonSelector);
     setButtonState(submitButton, form.checkValidity(), config);
-  })
+  });
 }
 
 const validationConfig = {
-  formSelector: '.form',
-  inputSelector: '.form__input',
-  submitButtonSelector: '.form__submit-button',
-  inputInvalidClass: 'form__input_state_invalid',
-  buttonInvalidClass: 'form__submit-button_state_invalid',
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__submit-button",
+  inputInvalidClass: "form__input_state_invalid",
+  buttonInvalidClass: "form__submit-button_state_invalid",
 };
 
 enableValidation(validationConfig);
