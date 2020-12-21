@@ -1,8 +1,8 @@
-.pop-up__form-input_el_place:focus {
+.form__input_type_link:focus {
   outline:none;
 }
 
-.pop-up__form-input_el_place::placeholder {
+.form__input_type_link::placeholder {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -10,6 +10,6 @@
   color: #c4c4c4;
 }
 
-.pop-up__form-input_el_place:invalid {
+.form__input_type_link:invalid {
   border-bottom: 1px solid #FF0000;
 }

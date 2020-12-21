@@ -1,0 +1,10 @@
+.form {
+  max-width: 430px;
+}
+
+/* Cтили для для разрешения до 638px */
+@media screen and (max-width: 638px) {
+  .form {
+    width: 282px;
+  }
+}

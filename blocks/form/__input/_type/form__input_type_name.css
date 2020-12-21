@@ -1,0 +1,7 @@
+.form__input_type_name:focus {
+  outline:none;
+}
+
+.form__input_type_name:invalid {
+  border-bottom: 1px solid #FF0000;
+}

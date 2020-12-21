@@ -1,0 +1,12 @@
+.form_content_image {
+  width: 75vw;
+  max-width: 75vw;
+  max-height: 75vh;
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: none;
+}
