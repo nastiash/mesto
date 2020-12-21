@@ -112,8 +112,7 @@ function addNewCard(event) {
   event.preventDefault();
   const newCard = composeCard({ name: addNewCardInputTitle.value, link: addNewCardInputLink.value });
   cardsContainerElement.prepend(newCard);
-  addNewCardInputTitle.value = "";
-  addNewCardInputLink.value = "";
+  addNewCardForm.reset();
   closePopup(addNewCardPopup);
 }
 
@@ -123,10 +122,27 @@ editProfileButton.addEventListener("click", () => {
   //автозаполнение полей формы
   editProfileInputName.value = profileName.textContent;
   editProfileInputAbout.value = profileAbout.textContent;
+  //установка состояния кнопки
+  const button = editProfilePopup.querySelector(".form__submit-button");
+  setButtonState(button, editProfileForm.checkValidity(), validationConfig);
+  //удаление сообщений об ошибке
+  const inputList = editProfileForm.querySelectorAll(".form__input");
+  inputList.forEach((input) => {
+    hideError(editProfileForm, input, validationConfig);
+  });
 });
 
 addNewCardButton.addEventListener("click", () => {
   openPopup(addNewCardPopup);
+  addNewCardForm.reset();
+  //установка состояния кнопки
+  const button = addNewCardPopup.querySelector(".form__submit-button");
+  setButtonState(button, addNewCardForm.checkValidity(), validationConfig);
+  //удаление сообщений об ошибке
+  const inputList = addNewCardPopup.querySelectorAll(".form__input");
+  inputList.forEach((input) => {
+    hideError(addNewCardForm, input, validationConfig);
+  });
 });
 
 //слушатели закрытия попапов
