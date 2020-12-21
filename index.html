@@ -45,9 +45,9 @@
         <h2 class="pop-up__title">Редактировать профиль</h2>
         <form class="form form_content_edit-profile" name="form-edit-profile" id="form-edit-profile" novalidate>
           <fieldset class="form__fields">
-            <input class="form__input form__input_type_name" type="text" id="name-input" name="name-input" required minlength="2" maxlength="40" />
+            <input class="form__input form__input_type_name" type="text" id="name-input" name="name-input" required minlength="2" maxlength="40" autocomplete="off" />
             <span class="form__input-error" id="name-input-error"></span>
-            <input class="form__input form__input_type_about" type="text" id="about-input" name="about-input" required minlength="2" maxlength="200" />
+            <input class="form__input form__input_type_about" type="text" id="about-input" name="about-input" required minlength="2" maxlength="200" autocomplete="off" />
             <span class="form__input-error" id="about-input-error"></span>
             <button class="form__submit-button" type="submit" aria-label="сохранить изменения">Сохранить</button>
           </fieldset>
@@ -60,9 +60,9 @@
         <h2 class="pop-up__title">Новое место</h2>
         <form class="form form_content_add-card" name="form-add-card" id="form-add-card" novalidate>
           <fieldset class="form__fields">
-            <input class="form__input form__input_type_place" type="text" id="place-input" name="place-input" placeholder="Название" required minlength="2" maxlength="30" />
+            <input class="form__input form__input_type_place" type="text" id="place-input" name="place-input" placeholder="Название" required minlength="2" maxlength="30" autocomplete="off" />
             <span class="form__input-error" id="place-input-error"></span>
-            <input class="form__input form__input_type_link" type="url" id="link-input" name="link-input" placeholder="Ссылка на картинку" required />
+            <input class="form__input form__input_type_link" type="url" id="link-input" name="link-input" placeholder="Ссылка на картинку" required autocomplete="off" />
             <span class="form__input-error" id="link-input-error"></span>
             <button class="form__submit-button" type="submit" aria-label="создать карточку">Создать</button>
           </fieldset>
