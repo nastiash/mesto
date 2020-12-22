@@ -12,6 +12,8 @@ const cardsTemplateElement = document.querySelector(".card-template");
 const editProfilePopup = document.querySelector(".pop-up_content_edit-profile");
 const editProfileForm = document.querySelector(".form_content_edit-profile");
 const editProfileCloseButton = document.querySelector(".pop-up__close-button_content_edit");
+const editProfileSubmitButton = editProfilePopup.querySelector(".form__submit-button");
+const editProfileInputList = editProfileForm.querySelectorAll(".form__input");
 const editProfileInputName = document.querySelector(".form__input_type_name");
 const editProfileInputAbout = document.querySelector(".form__input_type_about");
 
@@ -19,6 +21,8 @@ const editProfileInputAbout = document.querySelector(".form__input_type_about");
 const addNewCardPopup = document.querySelector(".pop-up_content_add-card");
 const addNewCardForm = document.querySelector(".form_content_add-card");
 const addNewCardCloseButton = document.querySelector(".pop-up__close-button_content_add-card");
+const addNewCardSubmitButton = addNewCardPopup.querySelector(".form__submit-button");
+const addNewCardInputList = addNewCardPopup.querySelectorAll(".form__input");
 const addNewCardInputTitle = document.querySelector(".form__input_type_place");
 const addNewCardInputLink = document.querySelector(".form__input_type_link");
 
@@ -112,7 +116,6 @@ function addNewCard(event) {
   event.preventDefault();
   const newCard = composeCard({ name: addNewCardInputTitle.value, link: addNewCardInputLink.value });
   cardsContainerElement.prepend(newCard);
-  addNewCardForm.reset();
   closePopup(addNewCardPopup);
 }
 
@@ -123,11 +126,9 @@ editProfileButton.addEventListener("click", () => {
   editProfileInputName.value = profileName.textContent;
   editProfileInputAbout.value = profileAbout.textContent;
   //установка состояния кнопки
-  const button = editProfilePopup.querySelector(".form__submit-button");
-  setButtonState(button, editProfileForm.checkValidity(), validationConfig);
+  setButtonState(editProfileSubmitButton, editProfileForm.checkValidity(), validationConfig);
   //удаление сообщений об ошибке
-  const inputList = editProfileForm.querySelectorAll(".form__input");
-  inputList.forEach((input) => {
+  editProfileInputList.forEach((input) => {
     hideError(editProfileForm, input, validationConfig);
   });
 });
@@ -136,11 +137,9 @@ addNewCardButton.addEventListener("click", () => {
   openPopup(addNewCardPopup);
   addNewCardForm.reset();
   //установка состояния кнопки
-  const button = addNewCardPopup.querySelector(".form__submit-button");
-  setButtonState(button, addNewCardForm.checkValidity(), validationConfig);
+  setButtonState(addNewCardSubmitButton, addNewCardForm.checkValidity(), validationConfig);
   //удаление сообщений об ошибке
-  const inputList = addNewCardPopup.querySelectorAll(".form__input");
-  inputList.forEach((input) => {
+  addNewCardInputList.forEach((input) => {
     hideError(addNewCardForm, input, validationConfig);
   });
 });
