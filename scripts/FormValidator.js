@@ -13,7 +13,6 @@ export class FormValidator {
     this._button = validationConfig.submitButtonSelector,
     this._inputInvalidClass = validationConfig.inputInvalidClass,
     this._buttonInvalidClass = validationConfig.buttonInvalidClass,
-
     this._activeForm = activeForm
   }
 
