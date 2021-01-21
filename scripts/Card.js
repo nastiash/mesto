@@ -47,6 +47,7 @@ export class Card {
     this._element.querySelector(".card__title").textContent = this._name;
     this._element.querySelector(".card__photo").alt = this._name;
     this._element.querySelector(".card__photo").src = this._link;
+
     return this._element;
   }
 
@@ -65,10 +66,12 @@ export class Card {
       this._handlePhotoClick(this._name, this._link);
     });
   }
+
   //обработчик лайка
   _handleLikeClick() {
     this._element.querySelector(".card__like-button").classList.toggle("card__like-button_active");
   }
+
   //обработчик удаления карточки
   _handleDeleteClick() {
     this._element.remove();

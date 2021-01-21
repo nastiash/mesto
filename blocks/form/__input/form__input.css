@@ -11,10 +11,6 @@
   line-height: calc(17 / 14);
 }
 
-.form__input:last-of-type {
-  margin: 0 0 48px 0;
-}
-
 .form__input:focus {
   outline:none;
 }
