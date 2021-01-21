@@ -34,6 +34,7 @@ export class FormValidator {
     error.textContent = "";
   }
 
+  //проверяем валидность инпутов
   _checkInputValidity(form, input) {
     if (input.validity.valid) {
       this._hideError(form, input);
@@ -42,6 +43,7 @@ export class FormValidator {
     }
   }
 
+  //устанавливаем состояние кнопки
   _setButtonState(button, isActive) {
     if (!isActive) {
       button.classList.add(this._buttonInvalidClass);
@@ -52,6 +54,7 @@ export class FormValidator {
     }
   }
 
+  //вешаем слушатели
   _setEventListeners(form) {
     const inputList = form.querySelectorAll(".form__input");
     const submitButton = form.querySelector(this._button);
@@ -68,6 +71,7 @@ export class FormValidator {
     });
   }
 
+  //включаем валидацию
   enableValidation() {
     const formList = document.querySelectorAll('.form');
 

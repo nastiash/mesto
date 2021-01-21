@@ -1,4 +1,4 @@
-# Проект 4: Mesto.
+# Проект 4-7: Mesto.
 ![mesto](https://i.ibb.co/pPvYbhj/mesto.jpg)
 
 
@@ -30,4 +30,4 @@
 * ⚛️ БЭМ-методология организации работы с кодом
 * ⚛️ HTML разметка
 * ⚛️ CSS (методы адаптивной верстки flex и grid, трансформации)
-* ⚛️ Основы JavaScript
+* ⚛️ JavaScript
