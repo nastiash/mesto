@@ -1,11 +1,11 @@
 export class FormValidator {
-  constructor(validationConfig, form) {
+  constructor(validationConfig, formElement) {
     this._inputSelector = validationConfig.inputSelector,
     this._buttonSelector = validationConfig.submitButtonSelector,
     this._inputInvalidClass = validationConfig.inputInvalidClass,
     this._buttonInvalidClass = validationConfig.buttonInvalidClass,
     this._formSelector = validationConfig.formSelector,
-    this._form = form
+    this._formElement = formElement
   }
 
   //https://i.ibb.co/HFRvGW8/plank.jpg
@@ -34,13 +34,13 @@ _checkInputValidity(input) {
 }
 
 //устанавливаем состояние кнопки
-_setButtonState(button, isActive) {
+_setButtonState(isActive) {
   if (!isActive) {
-    button.classList.add(this._buttonInvalidClass);
-    button.disabled = true;
+    this._submitButton.classList.add(this._buttonInvalidClass);
+    this._submitButton.disabled = true;
   } else {
-    button.classList.remove(this._buttonInvalidClass);
-    button.disabled = false;
+    this._submitButton.classList.remove(this._buttonInvalidClass);
+    this._submitButton.disabled = false;
   }
 }
 
@@ -68,7 +68,7 @@ _setEventListeners() {
   this._inputList.forEach((input) => {
     input.addEventListener("input", () => {
       this._checkInputValidity(input);
-      this._setButtonState(this._submitButton, this._form.checkValidity());
+      this._setButtonState(this._form.checkValidity());
     });
   });
 
@@ -79,8 +79,10 @@ _setEventListeners() {
 
 //включаем валидацию
 enableValidation() {
+  this._form = this._formElement.querySelector(this._formSelector);
   this._submitButton = this._form.querySelector(this._buttonSelector);
+
+  this._setButtonState(this._form.checkValidity());
   this._setEventListeners();
-  this._setButtonState(this._submitButton, this._form.checkValidity());
   }
 }

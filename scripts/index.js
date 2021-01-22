@@ -25,6 +25,7 @@ const addNewCardForm = document.querySelector(".form_content_add-card");
 const addNewCardCloseButton = document.querySelector(".pop-up__close-button_content_add-card");
 const addNewCardInputTitle = document.querySelector(".form__input_type_place");
 const addNewCardInputLink = document.querySelector(".form__input_type_link");
+const addNewCardSubmitButton = addNewCardPopup.querySelector(".form__submit-button");
 
 /*** ПОП-АП ФУЛСАЙЗ ФОТКИ ***/
 const fullSizeImagePopup = document.querySelector(".pop-up_content_image");
@@ -111,6 +112,7 @@ function addNewCard(event) {
   closePopup(addNewCardPopup);
 }
 
+
 //слушатель открытия попапа редактирования профиля
 editProfileButton.addEventListener("click", () => {
   openPopup(editProfilePopup);
@@ -122,6 +124,8 @@ editProfileButton.addEventListener("click", () => {
 //слушатель открытия попапа добавления новой карточки
 addNewCardButton.addEventListener("click", () => {
   openPopup(addNewCardPopup);
+  addNewCardSubmitButton.classList.add('form__submit-button_state_invalid');
+  addNewCardSubmitButton.disabled = true;
   addNewCardForm.reset();
 });
 
@@ -143,13 +147,10 @@ editProfileForm.addEventListener("submit", submitEditProfileForm);
 addNewCardForm.addEventListener("submit", addNewCard);
 
 //включаем валидацию
-const formList = document.querySelectorAll(".form");
-
-function setValidation(form) {
-  const validation = new FormValidator(validationConfig, form);
+function setValidation(formElement) {
+  const validation = new FormValidator(validationConfig, formElement);
   validation.enableValidation();
 }
 
-formList.forEach((form) => {
-  setValidation(form);
-});
+setValidation(editProfilePopup);
+setValidation(addNewCardPopup);
