@@ -1,86 +1,86 @@
-export const validationConfig = {
-  formSelector: ".form",
-  inputSelector: ".form__input",
-  submitButtonSelector: ".form__submit-button",
-  inputInvalidClass: "form__input_state_invalid",
-  buttonInvalidClass: "form__submit-button_state_invalid",
-};
-
 export class FormValidator {
-  constructor(validationConfig, activeForm) {
-    this._form = validationConfig.formSelector,
-    this._input = validationConfig.inputSelector,
-    this._button = validationConfig.submitButtonSelector,
+  constructor(validationConfig, form) {
+    this._inputSelector = validationConfig.inputSelector,
+    this._buttonSelector = validationConfig.submitButtonSelector,
     this._inputInvalidClass = validationConfig.inputInvalidClass,
     this._buttonInvalidClass = validationConfig.buttonInvalidClass,
-    this._activeForm = activeForm
+    this._formSelector = validationConfig.formSelector,
+    this._form = form
   }
 
   //https://i.ibb.co/HFRvGW8/plank.jpg
 
-  //показываем ошибку
-  _showError(form, input) {
-    const error = form.querySelector(`#${input.id}-error`);
+//показываем ошибку
+_showError(input) {
+  const error = this._form.querySelector(`#${input.id}-error`);
+  input.classList.add(this._inputInvalidClass);
+  error.textContent = input.validationMessage;
+}
 
-    input.classList.add(this._inputInvalidClass);
-    error.textContent = input.validationMessage;
+//скрываем ошибку
+_hideError(input) {
+  const error = this._form.querySelector(`#${input.id}-error`);
+  input.classList.remove(this._inputInvalidClass);
+  error.textContent = "";
+}
+
+//проверяем валидность инпутов
+_checkInputValidity(input) {
+  if (input.validity.valid) {
+    this._hideError(input);
+  } else {
+    this._showError(input);
   }
+}
 
-  //скрываем ошибку
-  _hideError(form, input) {
-    const error = form.querySelector(`#${input.id}-error`);
+//устанавливаем состояние кнопки
+_setButtonState(button, isActive) {
+  if (!isActive) {
+    button.classList.add(this._buttonInvalidClass);
+    button.disabled = true;
+  } else {
+    button.classList.remove(this._buttonInvalidClass);
+    button.disabled = false;
+  }
+}
 
-    input.classList.remove(this._inputInvalidClass);
+//удаляем ошибки при ресете попапа
+_deleteErrors() {
+  this._errorList = this._form.querySelectorAll(".form__input-error");
+
+  this._inputList.forEach((input) => {
+    input.classList.remove("form__input_state_invalid");
+  });
+
+  this._errorList.forEach((error) => {
     error.textContent = "";
-  }
+  });
+}
 
-  //проверяем валидность инпутов
-  _checkInputValidity(form, input) {
-    if (input.validity.valid) {
-      this._hideError(form, input);
-    } else {
-      this._showError(form, input);
-    }
-  }
+//вешаем слушатели
+_setEventListeners() {
+  this._inputList = this._form.querySelectorAll(this._inputSelector);
 
-  //устанавливаем состояние кнопки
-  _setButtonState(button, isActive) {
-    if (!isActive) {
-      button.classList.add(this._buttonInvalidClass);
-      button.disabled = true;
-    } else {
-      button.classList.remove(this._buttonInvalidClass);
-      button.disabled = false;
-    }
-  }
+  this._form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
 
-  //вешаем слушатели
-  _setEventListeners(form) {
-    const inputList = form.querySelectorAll(".form__input");
-    const submitButton = form.querySelector(this._button);
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+  this._inputList.forEach((input) => {
+    input.addEventListener("input", () => {
+      this._checkInputValidity(input);
+      this._setButtonState(this._submitButton, this._form.checkValidity());
     });
+  });
 
-    inputList.forEach((input) => {
-      input.addEventListener("input", () => {
-        this._checkInputValidity(form, input);
-        this._setButtonState(submitButton, form.checkValidity());
-      });
-    });
+  this._form.addEventListener("reset", () => {
+    this._deleteErrors();
+  });
+}
+
+//включаем валидацию
+enableValidation() {
+  this._submitButton = this._form.querySelector(this._buttonSelector);
+  this._setEventListeners();
+  this._setButtonState(this._submitButton, this._form.checkValidity());
   }
-
-  //включаем валидацию
-  enableValidation() {
-    const formList = document.querySelectorAll('.form');
-
-    formList.forEach((form) => {
-      const submitButton = form.querySelector(this._button);
-
-      this._setEventListeners(form);
-      this._setButtonState(submitButton, form.checkValidity());
-    });
-  }
-
 }

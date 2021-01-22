@@ -1,5 +1,7 @@
-import { Card, initialCards } from "./Card.js";
-import { FormValidator, validationConfig } from "./FormValidator.js";
+import { Card } from "./Card.js";
+import { initialCards } from "./initialCards.js";
+import { FormValidator } from "./FormValidator.js";
+import { validationConfig } from "./validationConfig.js";
 
 /*** ЭЛЕМЕНТЫ ПРОФИЛЯ ***/
 const editProfileButton = document.querySelector(".profile__edit-button");
@@ -80,41 +82,33 @@ const composeFullSizeImagePopup = (name, link) => {
   openPopup(fullSizeImagePopup);
 };
 
-//отображение стартовых карточек
-function renderCardList() {
+//создание и публикация карточек
+function createNewCard(item) {
+  //создаем экземпляр класса карточки
+  const card = new Card(item, ".card-template", composeFullSizeImagePopup);
+  //создаем карточку и возвращаем наружу
+  const cardElements = card.generateCard();
+  //публикуем в DOM
+  cardsContainerElement.prepend(cardElements);
+}
+
+//создание стартовых карточек
+function initialCardList() {
   initialCards.forEach((item) => {
-    //создаем экземпляр класса карточки
-    const card = new Card(item.name, item.link, ".card-template", composeFullSizeImagePopup);
-    //создаем карточку и возвращаем наружу
-    const cardElements = card.generateCard();
-    //добавляем в DOM
-    cardsContainerElement.append(cardElements);
+    createNewCard(item);
   });
 }
 
-renderCardList();
+initialCardList();
 
-//добавление новой карточки
+//создание новой карточки
 function addNewCard(event) {
   event.preventDefault();
-  const card = new Card(addNewCardInputTitle.value, addNewCardInputLink.value, ".card-template", composeFullSizeImagePopup);
-  const cardElement = card.generateCard();
-  cardsContainerElement.prepend(cardElement);
+  //создаем объект новой карточки
+  const newCard = { name: addNewCardInputTitle.value, link: addNewCardInputLink.value, templateSelector: ".card-template", handlePhotoClick: composeFullSizeImagePopup };
+
+  createNewCard(newCard);
   closePopup(addNewCardPopup);
-}
-
-//удаление ошибок при ресете попапа
-function deleteErrors(popup) {
-  const inputList = popup.querySelectorAll(".form__input");
-  const errorList = popup.querySelectorAll(".form__input-error");
-
-  inputList.forEach((input) => {
-    input.classList.remove('form__input_state_invalid');
-  });
-
-  errorList.forEach((error) => {
-    error.textContent = "";
-  });
 }
 
 //слушатель открытия попапа редактирования профиля
@@ -123,22 +117,12 @@ editProfileButton.addEventListener("click", () => {
   //автозаполнение полей формы
   editProfileInputName.value = profileName.textContent;
   editProfileInputAbout.value = profileAbout.textContent;
-  //убираем ошибки
-  deleteErrors(editProfilePopup);
-  //включаем валидацию
-  const validation = new FormValidator(validationConfig, editProfilePopup);
-  validation.enableValidation();
 });
 
 //слушатель открытия попапа добавления новой карточки
 addNewCardButton.addEventListener("click", () => {
   openPopup(addNewCardPopup);
   addNewCardForm.reset();
-  //убираем ошибки
-  deleteErrors(addNewCardPopup);
-  //включаем валидацию
-  const validation = new FormValidator(validationConfig, addNewCardPopup);
-  validation.enableValidation();
 });
 
 //слушатели закрытия попапов
@@ -157,3 +141,15 @@ fullSizeImageCloseButton.addEventListener("click", () => {
 //слушатели сабмитов
 editProfileForm.addEventListener("submit", submitEditProfileForm);
 addNewCardForm.addEventListener("submit", addNewCard);
+
+//включаем валидацию
+const formList = document.querySelectorAll(".form");
+
+function setValidation(form) {
+  const validation = new FormValidator(validationConfig, form);
+  validation.enableValidation();
+}
+
+formList.forEach((form) => {
+  setValidation(form);
+});
