@@ -1,7 +1,9 @@
 import { Card } from "./Card.js";
+/*import { Popup } from "./Popup.js";*/
 import { initialCards } from "./initialCards.js";
 import { FormValidator } from "./FormValidator.js";
 import { validationConfig } from "./validationConfig.js";
+import { Section } from "./Section.js";
 
 /*** ЭЛЕМЕНТЫ ПРОФИЛЯ ***/
 const editProfileButton = document.querySelector(".profile__edit-button");
@@ -33,12 +35,29 @@ const fullSizeImagePopupCaption = document.querySelector(".pop-up__image-caption
 const fullSizeImagePopupPhoto = document.querySelector(".pop-up__big-image");
 const fullSizeImageCloseButton = document.querySelector(".pop-up__close-button_content_image");
 
-//открытие попапов
+
 const openPopup = (popup) => {
   popup.classList.add("pop-up_opened");
   document.addEventListener("keyup", closePopupWithEsc);
   popup.addEventListener("click", closePopupWithOverlayClick);
 };
+
+
+/*
+const openPopup = new Section({
+  items: items,
+  renderer: (item) => {
+    const card = new DefaultCard(item, '.default-card');
+    const cardElement = card.generateCard();
+    defaultCardList.setItem(cardElement);
+  }
+}, containerSelector);
+
+editProfileButton.addEventListener('click', () => {
+  defaultCardList.renderItems();
+});
+
+*/
 
 //закрытие попапов
 const closePopup = (popup) => {
@@ -67,6 +86,7 @@ const closePopupWithOverlayClick = (event) => {
   }
 };
 
+
 //запись значений из формы редактирования в профиль
 function submitEditProfileForm(event) {
   event.preventDefault();
@@ -93,15 +113,6 @@ function createNewCard(item) {
   cardsContainerElement.prepend(cardElements);
 }
 
-//создание стартовых карточек
-function initialCardList() {
-  initialCards.forEach((item) => {
-    createNewCard(item);
-  });
-}
-
-initialCardList();
-
 //создание новой карточки
 function addNewCard(event) {
   event.preventDefault();
@@ -111,6 +122,18 @@ function addNewCard(event) {
   createNewCard(newCard);
   closePopup(addNewCardPopup);
 }
+
+//создание и отрисовка стартовых карточек
+const initialCardList = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    const card = new Card(item, ".card-template", composeFullSizeImagePopup);
+    const cardElement = card.generateCard();
+    initialCardList.addItem(cardElement);
+  }
+}, cardsContainerElement);
+
+initialCardList.renderItems();
 
 
 //слушатель открытия попапа редактирования профиля
@@ -141,6 +164,8 @@ addNewCardCloseButton.addEventListener("click", () => {
 fullSizeImageCloseButton.addEventListener("click", () => {
   closePopup(fullSizeImagePopup);
 });
+
+
 
 //слушатели сабмитов
 editProfileForm.addEventListener("submit", submitEditProfileForm);
