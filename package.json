@@ -1,0 +1,19 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "![mesto](https://i.ibb.co/ZMQzNbP/mesto.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nastiash/mesto.git"
+  },
+  "author": "nastia sh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nastiash/mesto/issues"
+  },
+  "homepage": "https://github.com/nastiash/mesto#readme"
+}
