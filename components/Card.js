@@ -1,15 +1,20 @@
 export class Card {
-  constructor(data, templateSelector, composeFullSizeImagePopup) {
+  constructor(data, templateSelector, openPopupWithImage) {
+    this._data = data;
     this._name = data.name;
     this._alt = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
-    this._handlePhotoClick = composeFullSizeImagePopup;
+    this._handlePhotoClick = openPopupWithImage;
   }
 
   //забираем шаблон
   _getTemplate() {
-    const cardElement = document.querySelector(this._templateSelector).content.firstElementChild.cloneNode(true);
+    const cardElement = document
+    .querySelector(this._templateSelector)
+    .content
+    .firstElementChild
+    .cloneNode(true);
     return cardElement;
   }
 
@@ -24,6 +29,7 @@ export class Card {
     photo.src = this._link;
 
     return this._element;
+
   }
 
   //вешаем слушатели
@@ -38,7 +44,7 @@ export class Card {
     });
     //слушатель фулл-сайз попапа
     this._element.querySelector(".card__photo").addEventListener("click", () => {
-      this._handlePhotoClick(this._name, this._link);
+      this._handlePhotoClick(this._data);
     });
   }
 
