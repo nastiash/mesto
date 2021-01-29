@@ -14,75 +14,77 @@ import { validationConfig,
          editProfileInputAbout,
          addNewCardPopup } from "../utils/constants.js";
 
-
 //https://i.ibb.co/HFRvGW8/plank.jpg
 
 //попап с большой картинкой
-const popupWithImage = new PopupWithImage (".pop-up_content_image");
+const popupWithImage = new PopupWithImage(".pop-up_content_image");
 
 const openPopupWithImage = (data) => {
   popupWithImage.openPopup(data);
-  };
-
+};
 
 //создание и отрисовка новых карточек
-const cardList = new Section({
-  items: {},
-  renderer: (data) => {
-    const card = createNewCard(data);
-    const cardElement = card.generateCard();
-    cardList.addItem(cardElement);
-  }
-}, ".cards");
-
+const cardList = new Section(
+  {
+    items: {},
+    renderer: (data) => {
+      const card = createNewCard(data);
+      const cardElement = card.generateCard();
+      cardList.addItem(cardElement);
+    },
+  },
+  ".cards"
+);
 
 const createNewCard = (data) => {
   const newCard = new Card(data, ".card-template", openPopupWithImage);
   return newCard;
-}
+};
 
 //попап добавления новой карточки
-const popupWithAddCardForm = new PopupWithForm ({
-  handleFormSubmit: (data) => {
-const card = createNewCard(data);
-const cardElement = card.generateCard();
+const popupWithAddCardForm = new PopupWithForm(
+  {
+    handleFormSubmit: (data) => {
+      const card = createNewCard(data);
+      const cardElement = card.generateCard();
 
-cardList.addItem(cardElement);
-popupWithAddCardForm.closePopup();
-  }
-}, ".pop-up_content_add-card");
-
+      cardList.addItem(cardElement);
+      popupWithAddCardForm.closePopup();
+    },
+  },
+  ".pop-up_content_add-card"
+);
 
 //попап с информацией профиля
-const userInfo = new UserInfo ({
+const userInfo = new UserInfo({
   nameSelector: ".profile__name",
-  aboutSelector: ".profile__about"
+  aboutSelector: ".profile__about",
 });
 
-const popupWithUserInfo = new PopupWithForm ({
-  handleFormSubmit: (data) => {
-
-    userInfo.setUserInfo(data);
-    popupWithUserInfo.closePopup();
-  }
-}, ".pop-up_content_edit-profile");
-
+const popupWithUserInfo = new PopupWithForm(
+  {
+    handleFormSubmit: (data) => {
+      userInfo.setUserInfo(data);
+      popupWithUserInfo.closePopup();
+    },
+  },
+  ".pop-up_content_edit-profile"
+);
 
 //отрисовка стартовых карточек
-const initialCardList = new Section({
-  items: initialCards,
-  renderer: (data) => {
-    const card = createNewCard(data);
-    const cardElement = card.generateCard();
-    initialCardList.addItem(cardElement);
-  }
-}, ".cards");
+const initialCardList = new Section(
+  {
+    items: initialCards,
+    renderer: (data) => {
+      const card = createNewCard(data);
+      const cardElement = card.generateCard();
+      initialCardList.addItem(cardElement);
+    },
+  },
+  ".cards"
+);
 
 initialCardList.renderItems();
-
-
-
-
 
 //слушатель открытия попапа добавления новой карточки
 addNewCardButton.addEventListener("click", () => {
@@ -103,7 +105,7 @@ editProfileButton.addEventListener("click", () => {
 const setValidation = (formElement) => {
   const validation = new FormValidator(validationConfig, formElement);
   validation.enableValidation();
-}
+};
 
 setValidation(editProfilePopup);
 setValidation(addNewCardPopup);

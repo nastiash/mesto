@@ -9,13 +9,13 @@ export class UserInfo {
   getUserInfo() {
     const data = {
       username: this._username.textContent,
-      about: this._about.textContent
+      about: this._about.textContent,
     };
-  return data;
+    return data;
   }
 
   setUserInfo(data) {
     this._username.textContent = data.username;
     this._about.textContent = data.about;
-    }
+  }
 }

@@ -7,14 +7,12 @@ export class Section {
   }
 
   renderItems() {
-    this._renderedItems.forEach(item => {
-      this._renderer(item)
-  });
+    this._renderedItems.forEach((item) => {
+      this._renderer(item);
+    });
   }
 
-  //принимает параметр element и вставляет его в контейнер
   addItem(element) {
     this._container.prepend(element);
   }
-
 }

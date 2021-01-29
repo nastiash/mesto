@@ -10,11 +10,7 @@ export class Card {
 
   //забираем шаблон
   _getTemplate() {
-    const cardElement = document
-    .querySelector(this._templateSelector)
-    .content
-    .firstElementChild
-    .cloneNode(true);
+    const cardElement = document.querySelector(this._templateSelector).content.firstElementChild.cloneNode(true);
     return cardElement;
   }
 
@@ -29,7 +25,6 @@ export class Card {
     photo.src = this._link;
 
     return this._element;
-
   }
 
   //вешаем слушатели
@@ -38,10 +33,12 @@ export class Card {
     this._element.querySelector(".card__like-button").addEventListener("click", () => {
       this._handleLikeClick();
     });
+
     //слушатель кнопки удаления
     this._element.querySelector(".card__delete-button").addEventListener("click", () => {
       this._handleDeleteClick();
     });
+
     //слушатель фулл-сайз попапа
     this._element.querySelector(".card__photo").addEventListener("click", () => {
       this._handlePhotoClick(this._data);

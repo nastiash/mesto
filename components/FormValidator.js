@@ -84,5 +84,5 @@ enableValidation() {
 
   this._setButtonState(this._form.checkValidity());
   this._setEventListeners();
-  }
+}
 }

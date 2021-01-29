@@ -37,7 +37,6 @@ export const initialCards = [
 export const editProfileButton = document.querySelector(".profile__edit-button");
 export const addNewCardButton = document.querySelector(".profile__add-button");
 
-
 /*** ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ ***/
 export const editProfilePopup = document.querySelector(".pop-up_content_edit-profile");
 export const editProfileInputName = document.querySelector(".form__input_type_name");
