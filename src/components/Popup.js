@@ -7,26 +7,16 @@ export class Popup {
     this._handleEscClose = this._handleEscClose.bind(this);
     this._handleOverlayClose = this._handleOverlayClose.bind(this);
     this._handleButtonClose = this._handleButtonClose.bind(this);
-    this._handleSubmitButtonState = this._handleSubmitButtonState.bind(this);
   }
 
   openPopup() {
     this._popup.classList.add("pop-up_opened");
-    this._handleSubmitButtonState();
     this.setEventListeners();
   }
 
   closePopup() {
     this._popup.classList.remove("pop-up_opened");
     this._removeEventListeners();
-  }
-
-  _handleSubmitButtonState() {
-    if (this._popup.classList.contains("pop-up_content_add-card")) {
-      this._submitButton.classList.add("form__submit-button_state_invalid");
-    } else {
-      this._submitButton.classList.remove("form__submit-button_state_invalid");
-    }
   }
 
   _handleButtonClose() {

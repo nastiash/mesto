@@ -11,6 +11,7 @@ export class PopupWithImage extends Popup {
     super.openPopup();
 
     this._image.src = data.link;
+    //this._image.src = `"<%=require('${data.link}')%>"`;
     this._image.alt = data.name;
     this._caption.textContent = data.name;
   }

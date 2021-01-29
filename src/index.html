@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesto для обмена фотографиями</title>
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="<%=require('./images/favicon.ico')%>" type="image/x-icon" />
+
   </head>
   <body class="page">
     <header class="header">
@@ -12,7 +13,7 @@
     </header>
     <main class="content">
       <section class="profile" aria-label="личный профиль">
-        <img class="profile__avatar" src="./images/Profile/Avatar.png" alt="аватар профиля" />
+        <img class="profile__avatar" src="<%=require('./images/Profile/Avatar.png')%>" alt="аватар профиля" />
         <div class="profile__info">
           <h1 class="profile__name">Планктоша</h1>
           <p class="profile__about">Я окончил колледж!</p>
