@@ -11,6 +11,7 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { validationConfig,
          initialCards,
          editProfileButton,
+         submitButton,
          addNewCardButton,
          editProfilePopup,
          editProfileInputName,
@@ -90,6 +91,9 @@ initialCardList.renderItems();
 
 //слушатели
 addNewCardButton.addEventListener("click", () => {
+  submitButton.classList.add("form__submit-button_state_invalid");
+  submitButton.disabled = true;
+
   popupWithAddCardForm.openPopup();
 });
 
