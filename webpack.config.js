@@ -67,7 +67,7 @@ plugins: [
   //передаём объект опций
   new HtmlWebpackPlugin({
     //путь к файлу index.html
-    template: './src/index.html'
+    template: 'src/index.html'
   }),
   //вызываем плагин для очистки содержимого папки dist
   new CleanWebpackPlugin(),
