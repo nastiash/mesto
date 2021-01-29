@@ -1,3 +1,6 @@
+// добавляем импорт главного файла стилей
+import './index.css';
+
 import { FormValidator } from "../components/FormValidator.js";
 import { Section } from "../components/Section.js";
 import { UserInfo } from "../components/UserInfo.js";
@@ -16,14 +19,14 @@ import { validationConfig,
 
 //https://i.ibb.co/HFRvGW8/plank.jpg
 
-//попап с большой картинкой
+//зум картинки
 const popupWithImage = new PopupWithImage(".pop-up_content_image");
 
 const openPopupWithImage = (data) => {
   popupWithImage.openPopup(data);
 };
 
-//создание и отрисовка новых карточек
+//добавление новых карточек
 const cardList = new Section(
   {
     items: {},
@@ -41,7 +44,6 @@ const createNewCard = (data) => {
   return newCard;
 };
 
-//попап добавления новой карточки
 const popupWithAddCardForm = new PopupWithForm(
   {
     handleFormSubmit: (data) => {
@@ -55,7 +57,7 @@ const popupWithAddCardForm = new PopupWithForm(
   ".pop-up_content_add-card"
 );
 
-//попап с информацией профиля
+//информация профиля
 const userInfo = new UserInfo({
   nameSelector: ".profile__name",
   aboutSelector: ".profile__about",
@@ -71,7 +73,7 @@ const popupWithUserInfo = new PopupWithForm(
   ".pop-up_content_edit-profile"
 );
 
-//отрисовка стартовых карточек
+//стартовые карточки
 const initialCardList = new Section(
   {
     items: initialCards,
@@ -86,12 +88,11 @@ const initialCardList = new Section(
 
 initialCardList.renderItems();
 
-//слушатель открытия попапа добавления новой карточки
+//слушатели
 addNewCardButton.addEventListener("click", () => {
   popupWithAddCardForm.openPopup();
 });
 
-//слушатель открытия попапа редактирования профиля
 editProfileButton.addEventListener("click", () => {
   const userData = userInfo.getUserInfo();
 

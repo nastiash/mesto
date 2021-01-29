@@ -8,8 +8,6 @@ export class FormValidator {
     this._formElement = formElement
   }
 
-  //https://i.ibb.co/HFRvGW8/plank.jpg
-
 //показываем ошибку
 _showError(input) {
   const error = this._form.querySelector(`#${input.id}-error`);
