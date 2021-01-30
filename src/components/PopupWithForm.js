@@ -7,6 +7,7 @@ export class PopupWithForm extends Popup {
     this._form = this._popup.querySelector(".form");
     this._handleFormSubmit = handleFormSubmit;
     this._submit = this._submit.bind(this);
+    this._inputList = this._form.querySelectorAll(".form__input");
   }
 
   _submit(event) {
@@ -15,12 +16,10 @@ export class PopupWithForm extends Popup {
   }
 
   _getInputValues() {
-    // достаём все элементы полей
-    const inputList = this._form.querySelectorAll(".form__input");
     // создаём пустой объект
     const data = {};
     // добавляем в этот объект значения всех полей
-    inputList.forEach((input) => {
+    this._inputList.forEach((input) => {
       data[input.name] = input.value;
     });
     // возвращаем объект значений

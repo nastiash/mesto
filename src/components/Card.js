@@ -6,8 +6,6 @@ export class Card {
     this._link = data.link;
     this._templateSelector = templateSelector;
     this._handlePhotoClick = openPopupWithImage;
-    console.log(this._handlePhotoClick);
-    console.log(this._data);
   }
 
   //забираем шаблон

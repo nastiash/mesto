@@ -11,7 +11,6 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { validationConfig,
          initialCards,
          editProfileButton,
-         submitButton,
          addNewCardButton,
          editProfilePopup,
          editProfileInputName,
@@ -26,19 +25,6 @@ const popupWithImage = new PopupWithImage(".pop-up_content_image");
 const openPopupWithImage = (data) => {
   popupWithImage.openPopup(data);
 };
-
-//добавление новых карточек
-const cardList = new Section(
-  {
-    items: {},
-    renderer: (data) => {
-      const card = createNewCard(data);
-      const cardElement = card.generateCard();
-      cardList.addItem(cardElement);
-    },
-  },
-  ".cards"
-);
 
 const createNewCard = (data) => {
   const newCard = new Card(data, ".card-template", openPopupWithImage);
@@ -74,25 +60,23 @@ const popupWithUserInfo = new PopupWithForm(
   ".pop-up_content_edit-profile"
 );
 
-//стартовые карточки
-const initialCardList = new Section(
+//добавление новых карточек
+const cardList = new Section(
   {
     items: initialCards,
     renderer: (data) => {
       const card = createNewCard(data);
       const cardElement = card.generateCard();
-      initialCardList.addItem(cardElement);
+      cardList.addItem(cardElement);
     },
   },
   ".cards"
 );
 
-initialCardList.renderItems();
+cardList.renderItems();
 
 //слушатели
 addNewCardButton.addEventListener("click", () => {
-  submitButton.classList.add("form__submit-button_state_invalid");
-  submitButton.disabled = true;
 
   popupWithAddCardForm.openPopup();
 });
