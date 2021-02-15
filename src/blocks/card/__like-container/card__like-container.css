@@ -1,0 +1,8 @@
+.card__like-container {
+  margin-right: 21px;
+  display: block;
+  width: 21px;
+  height: 35px;
+  padding: 0;
+  justify-self: end;
+}

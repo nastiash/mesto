@@ -1,11 +1,9 @@
 .card__like-button {
-  margin-right: 21px;
   display: block;
   width: 21px;
   height: 19px;
   padding: 0;
   border: none;
-  justify-self: end;
   background-image: url(../../../images/Card/like-button_disabled.svg);
   background-size: contain;
   background-repeat: no-repeat;

@@ -44,15 +44,11 @@ _setButtonState(isActive) {
 
 //удаляем ошибки при ресете попапа
 _deleteErrors() {
-  this._errorList = this._form.querySelectorAll(".form__input-error");
 
   this._inputList.forEach((input) => {
-    input.classList.remove("form__input_state_invalid");
+    this._hideError(input);
   });
 
-  this._errorList.forEach((error) => {
-    error.textContent = "";
-  });
 }
 
 //вешаем слушатели

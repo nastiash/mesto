@@ -6,41 +6,34 @@ export const validationConfig = {
   buttonInvalidClass: "form__submit-button_state_invalid",
 };
 
-export const initialCards = [
-  {
-    name: "Бикини Боттом",
-    link: "https://i.ibb.co/NLKw6WG/bikini-bottom.jpg",
-  },
-  {
-    name: "Красти Планктон",
-    link: "https://i.ibb.co/c8Ct20y/krusty-plankton.jpg",
-  },
-  {
-    name: "Тюрьма 😱",
-    link: "https://i.ibb.co/HBqnT4G/Jail.jpg",
-  },
-  {
-    name: "Поля медуз",
-    link: "https://i.ibb.co/7JKD50c/jellyfish-fields.jpg",
-  },
-  {
-    name: "Дом Белки",
-    link: "https://i.ibb.co/QJ5QGWY/squirrel.jpg",
-  },
-  {
-    name: "Красти Краб",
-    link: "https://i.ibb.co/znZGSMp/krusty-krab.jpg",
-  },
-];
+export const cardConfig = {
+  cardListSelector: ".cards",
+  cardSelector: ".card",
+  cardImageSelector: ".card__photo",
+  cardCaptionSelector: ".card__caption",
+  cardTitleSelector: ".card__title",
+  cardDeleteButtonSelector: ".card__delete-button",
+  cardLikeContainerSelector: ".card__like-container",
+  cardLikeButtonSelector: ".card__like",
+  cardLikeButtonClass: 'card__like',
+
+  cardDeleteButtonClass: 'card__delete-button',
+  cardActiveLikeButtonClass: 'card__like-button_active',
+  cardLikesCounterSelector: ".card__like-counter"
+}
 
 /*** КНОПКИ ***/
 export const editProfileButton = document.querySelector(".profile__edit-button");
 export const addNewCardButton = document.querySelector(".profile__add-button");
+export const changeAvatarButton = document.querySelector(".profile__avatar_edit-button");
 
 /*** ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ ***/
 export const editProfilePopup = document.querySelector(".pop-up_content_edit-profile");
 export const editProfileInputName = document.querySelector(".form__input_type_name");
 export const editProfileInputAbout = document.querySelector(".form__input_type_about");
+
+/*** ПОПАП ИЗМЕНЕНИЯ АВАТАРА ***/
+export const changeAvatarPopup = document.querySelector(".pop-up_content_change-avatar");
 
 /*** ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ ***/
 export const addNewCardPopup = document.querySelector(".pop-up_content_add-card");
