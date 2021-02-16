@@ -19,7 +19,7 @@ import { validationConfig,
          editProfileInputAbout,
          addNewCardPopup,
          changeAvatarPopup,
-         changeAvatarButton } from "../utils/constants.js";
+         changeAvatarButton} from "../utils/constants.js";
 
 //https://i.ibb.co/TTVhhJ0/sb.jpg
 
@@ -52,9 +52,11 @@ const api = new Api({
   },
 });
 
-let ownerId = null;
+
 
 //отрисовка начальных данных
+export let ownerId = null;
+
 api
   .getInitialInfo()
   .then((data) => {
@@ -68,6 +70,8 @@ api
   });
 
 //удаление карточек
+export let newCard = null;
+
 const popupWithConfirmDelete = new PopupWithConfirm(
   {
     handleFormSubmit: (data) => {
@@ -92,8 +96,6 @@ const popupWithConfirmDelete = new PopupWithConfirm(
 const popupWithImage = new PopupWithImage(".pop-up_content_image");
 
 //создание новой карточки
-let newCard = null;
-
 const createNewCard = (data) => {
   const card = new Card(data, cardConfig, ".card-template", ownerId, {
     handlePhotoClick: (data) => {

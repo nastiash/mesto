@@ -7,18 +7,10 @@ export const validationConfig = {
 };
 
 export const cardConfig = {
-  cardListSelector: ".cards",
-  cardSelector: ".card",
   cardImageSelector: ".card__photo",
-  cardCaptionSelector: ".card__caption",
   cardTitleSelector: ".card__title",
   cardDeleteButtonSelector: ".card__delete-button",
-  cardLikeContainerSelector: ".card__like-container",
   cardLikeButtonSelector: ".card__like",
-  cardLikeButtonClass: 'card__like',
-
-  cardDeleteButtonClass: 'card__delete-button',
-  cardActiveLikeButtonClass: 'card__like-button_active',
   cardLikesCounterSelector: ".card__like-counter"
 }
 

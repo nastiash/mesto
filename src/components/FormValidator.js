@@ -44,11 +44,9 @@ _setButtonState(isActive) {
 
 //удаляем ошибки при ресете попапа
 _deleteErrors() {
-
   this._inputList.forEach((input) => {
     this._hideError(input);
   });
-
 }
 
 //вешаем слушатели

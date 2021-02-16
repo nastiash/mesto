@@ -10,6 +10,8 @@ export class Card {
     this._handleDeleteCard = handleDeleteCard;
     this._setLike = setLike;
     this._deleteLike = deleteLike;
+    this._likeButtonSelector = this._cardConfig.cardLikeButtonSelector;
+    this._likeButton = document.querySelector(this._likeButtonSelector);
   }
 
   //забираем шаблон
@@ -26,10 +28,10 @@ export class Card {
     }
   }
 
-    //счетчик лайков
-    setLikesCounter(data) {
-      this._likesCounter.textContent = String(data.likes.length);
-    }
+  //счетчик лайков
+  setLikesCounter(data) {
+    this._likesCounter.textContent = String(data.likes.length);
+  }
 
   //наполняем шаблон данными
   generateCard() {
