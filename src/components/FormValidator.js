@@ -66,6 +66,7 @@ _setEventListeners() {
 
   this._form.addEventListener("reset", () => {
     this._deleteErrors();
+    this._setButtonState(false);
   });
 }
 

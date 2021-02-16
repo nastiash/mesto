@@ -36,7 +36,7 @@ const cardList = new Section(
     renderer: (data) => {
       const card = createNewCard(data);
       const cardElement = card.generateCard();
-      card.setLikesCounter(data);
+      //она там и была уже реализована, получается задублировала =)
       cardList.addItem(cardElement);
     },
   },
@@ -70,7 +70,7 @@ api
   });
 
 //удаление карточек
-export let newCard = null;
+export let cardToDelete = null;
 
 const popupWithConfirmDelete = new PopupWithConfirm(
   {
@@ -78,10 +78,10 @@ const popupWithConfirmDelete = new PopupWithConfirm(
       api
         .deleteCard(data)
         .then(() => {
-          newCard.handleDeleteCard();
+          cardToDelete.handleDeleteCard();
         })
         .then(() => {
-          newCard = null;
+          cardToDelete = null;
           popupWithConfirmDelete.closePopup();
         })
         .catch((err) => {
@@ -102,7 +102,7 @@ const createNewCard = (data) => {
       popupWithImage.openPopup(data);
     },
     handleDeleteCard: () => {
-      newCard = card;
+      cardToDelete = card;
       popupWithConfirmDelete.openPopup(data);
     },
     setLike: (data) => {

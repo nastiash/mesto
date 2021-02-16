@@ -11,7 +11,7 @@ export class Card {
     this._setLike = setLike;
     this._deleteLike = deleteLike;
     this._likeButtonSelector = this._cardConfig.cardLikeButtonSelector;
-    this._likeButton = document.querySelector(this._likeButtonSelector);
+    //забыла удалить эту переменную в процессу работы((
   }
 
   //забираем шаблон
