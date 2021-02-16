@@ -17,7 +17,7 @@ export const cardConfig = {
 /*** КНОПКИ ***/
 export const editProfileButton = document.querySelector(".profile__edit-button");
 export const addNewCardButton = document.querySelector(".profile__add-button");
-export const changeAvatarButton = document.querySelector(".profile__avatar_edit-button");
+export const changeAvatarButton = document.querySelector(".profile__avatar-button");
 
 /*** ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ ***/
 export const editProfilePopup = document.querySelector(".pop-up_content_edit-profile");

@@ -1,4 +1,4 @@
-.profile__avatar_edit-button {
+.profile__avatar-button {
   position: absolute;
   top: 0;
   left: 0;
@@ -9,13 +9,13 @@
   border: none;
 }
 
-.profile__avatar_edit-button:hover{
+.profile__avatar-button:hover{
   background-color: rgba(0,0,0,.8);
-  background-image: url(../../../../images/Profile/Edit-avatar-icon.svg);
+  background-image: url(../../../images/Profile/Edit-avatar-icon.svg);
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.profile__avatar_edit-button:focus {
+.profile__avatar-button:focus {
   outline:none;
 }
