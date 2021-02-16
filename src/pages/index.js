@@ -63,7 +63,7 @@ api
     const [userData, cardsData] = data;
     ownerId = userData._id;
     userInfo.setInitialInfo(userData);
-    cardList.renderItems(cardsData);
+    cardList.renderItems(cardsData.reverse());
   })
   .catch((err) => {
     console.log(err);
